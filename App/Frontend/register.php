@@ -44,6 +44,53 @@ $stmt->close();
 $conn->close();
 */
 ?>
+
+
+
+
+
+
+<?php
+/*
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: ". $conn->connect_error);
+}
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $street = $_POST["street"];
+    $city = $_POST["city"];
+
+    // Prepare and bind
+    $stmt = $conn->prepare("INSERT INTO users (name, email, password, street, city) VALUES (?,?,?,?,?)");
+    $stmt->bind_param("sssss", $username, $email, $password, $street, $city);
+
+    // Execute
+    $stmt->execute();
+
+    // Check if insertion was successful
+    if ($stmt->affected_rows > 0) {
+        echo "Registration successful!";
+    } else {
+        echo "Error registering user";
+    }
+
+    // Close statement
+    $stmt->close();
+}
+
+// Close connection
+$conn->close();
+*/
+?>
+
          <!-- Sign Up Form -->
          <div id="central_panel">
          <h1>Sign Up</h1>

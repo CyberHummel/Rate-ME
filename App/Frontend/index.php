@@ -43,6 +43,51 @@ $stmt->close();
 $conn->close();
 */
 ?>
+
+
+<?php
+/*
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: ". $conn->connect_error);
+}
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Prepare and bind
+    $stmt = $conn->prepare("SELECT id, name, email FROM users WHERE name =? AND password =?");
+    $stmt->bind_param("ss", $username, $password);
+
+    // Execute
+    $stmt->execute();
+
+    // Bind result variables
+    $stmt->bind_result($id, $name, $email);
+
+    // Fetch value
+    if ($stmt->fetch()) {
+        // Login successful, redirect to dashboard or whatever
+        header("Location: dashboard.php");
+        exit;
+    } else {
+        // Login failed, display error message
+        echo "Invalid username or password";
+    }
+
+    // Close statement
+    $stmt->close();
+}
+
+// Close connection
+$conn->close();
+*/
+?>
 <div id="central_panel" >
   <div id="header">
     <H1>Sign in</H1>
