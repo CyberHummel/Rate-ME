@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<!-- Sign Up Form -->
+<div id="central_panel">
+  <div id="header">
+    <H1>Sign in</H1>
+  </div>
+  <!-- Sign Up Form -->
 <h1>Sign Up</h1>
 <form action="register.php" method="post">
   <label for="username">Username:</label>
@@ -10,6 +14,9 @@
   <input id="password" name="password" required="" type="password" />
   <input name="register" type="submit" value="Register" />
 </form>
+
+</div>
+
 
 <!-- Sign In Form -->
 <h1>Sign In</h1>
