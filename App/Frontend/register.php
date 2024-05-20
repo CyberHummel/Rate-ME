@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Register</title>
-        <link rel="stylesheet" type="text/css" href="design.css">
-    </head>
-    <body>
-    <?php 
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body>
+<?php 
 //basic information
 $servername = "localhost";
 $username = "root";
@@ -39,22 +39,6 @@ if ($stmt->fetch()) {
 // Close statement
 $stmt->close();
 
-// Close connection
-$conn->close();
-
-?>
-
-
-<?php
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: ". $conn->connect_error);
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $email = $_POST["email"];
@@ -84,9 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Hash and salt password
-    $salt = bin2hex(random_bytes(8));
-    $hashed_password = hash("sha256", $password. $salt);
+    // Hash password using password_hash
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, street, city) VALUES (?,?,?,?,?)");
@@ -108,29 +91,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close connection
 $conn->close();
-
 ?>
-         <!-- Sign Up Form -->
-         <div id="central_panel">
-         <h1>Sign Up</h1>
-<form action="register.php" method="post">
-  <label for="username">Username:</label>
-  <input id="username" name="username" required="" type="text" />
-  <label for="email">Email:</label>
-  <input id="email" name="email" required="" type="email" />
-  <label for="password">Password:</label>
-  <input id="password" name="password" required="" type="password" />
-  <label for="street">Street and Number:</label>
-  <input id="street" name="street" type="text" />
-  <label for="city">City and Postal Code:</label>
-  <input id="city" name="city" type="text" />
-  <input name="register" type="submit" value="Register" />
-</form>
-<div class="button-container">
-      <a href="index.php" class="small-button">Sign in</a>
+<!-- Sign Up Form -->
+<div id="central_panel">
+    <h1>Sign Up</h1>
+    <form action="register.php" method="post">
+        <label for="username">Username:</label>
+        <input id="username" name="username" required="" type="text" />
+        <label for="email">Email:</label>
+        <input id="email" name="email" required="" type="email" />
+        <label for="password">Password:</label>
+        <input id="password" name="password" required="" type="password" />
+        <label for="street">Street and Number:</label>
+        <input id="street" name="street" type="text" />
+        <label for="city">City and Postal Code:</label>
+        <input id="city" name="city" type="text" />
+        <input name="register" type="submit" value="Register" />
+    </form>
+    <div class="button-container">
+        <a href="index.php" class="small-button">Sign in</a>
     </div>
-         </div>
-
-        
-    </body>
+</div>
+</body>
 </html>
