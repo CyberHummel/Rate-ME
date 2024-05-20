@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php 
-//basic information
+// Basic information
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -17,11 +17,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: ". $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
 // Prepare and bind
-$stmt = $conn->prepare("SELECT userid, name, email FROM users WHERE name =?");
+$stmt = $conn->prepare("SELECT userid, name, email FROM users WHERE name = ?");
 $stmt->bind_param("s", $name);
 
 // Set parameters and execute
@@ -33,13 +33,13 @@ $stmt->bind_result($id, $name, $email);
 
 // Fetch value
 if ($stmt->fetch()) {
-    echo $id. " ". $name. " ". $email;
+    echo $id . " " . $name . " " . $email;
 }
 
 // Close statement
 $stmt->close();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $email = $_POST["email"];
     $password = $_POST["password"];
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = $_POST["city"];
 
     // Check if email is already in use
-    $stmt = $conn->prepare("SELECT email FROM users WHERE email =?");
+    $stmt = $conn->prepare("SELECT email FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Check if username is already in use
-    $stmt = $conn->prepare("SELECT name FROM users WHERE name =?");
+    $stmt = $conn->prepare("SELECT name FROM users WHERE name = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO users (name, email, password, street, city) VALUES (?,?,?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO users (name, email, password, street, city) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $username, $email, $hashed_password, $street, $city);
 
     // Execute
