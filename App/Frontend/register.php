@@ -74,6 +74,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, street, city) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $username, $email, $hashed_password, $street, $city);
+    
 
     // Execute
     $stmt->execute();
@@ -109,7 +110,7 @@ $conn->close();
         <input name="register" type="submit" value="Register" />
     </form>
     <div class="button-container">
-        <a href="index.php" class="small-button">Sign in</a>
+        <a id="registerbutton" href="index.php" class="small-button">Sign in</a>
     </div>
 </div>
 </body>
