@@ -7,11 +7,10 @@
     <body>
     <?php
 //basic information
-/*
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$dbname = "your_database_name";
+$username = "root";
+$password = "";
+$dbname = "rate_me";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -22,7 +21,7 @@ if ($conn->connect_error) {
 }
 
 // Prepare and bind
-$stmt = $conn->prepare("SELECT id, name, email FROM users WHERE name =?");
+$stmt = $conn->prepare("SELECT userid, name, email FROM users WHERE name =?");
 $stmt->bind_param("s", $name);
 
 // Set parameters and execute
@@ -42,16 +41,12 @@ $stmt->close();
 
 // Close connection
 $conn->close();
-*/
+
 ?>
 
 
-
-
-
-
 <?php
-/*
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -60,7 +55,6 @@ if ($conn->connect_error) {
     die("Connection failed: ". $conn->connect_error);
 }
 
-// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $email = $_POST["email"];
@@ -68,9 +62,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $street = $_POST["street"];
     $city = $_POST["city"];
 
+    // Check if email is already in use
+    $stmt = $conn->prepare("SELECT email FROM users WHERE email =?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
+    if ($stmt->num_rows > 0) {
+        echo "Email is already in use";
+        $stmt->close();
+        exit;
+    }
+
+    // Check if username is already in use
+    $stmt = $conn->prepare("SELECT name FROM users WHERE name =?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->store_result();
+    if ($stmt->num_rows > 0) {
+        echo "Username is already in use";
+        $stmt->close();
+        exit;
+    }
+
+    // Hash and salt password
+    $salt = bin2hex(random_bytes(8));
+    $hashed_password = hash("sha256", $password. $salt);
+
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, street, city) VALUES (?,?,?,?,?)");
-    $stmt->bind_param("sssss", $username, $email, $password, $street, $city);
+    $stmt->bind_param("sssss", $username, $email, $hashed_password, $street, $city);
 
     // Execute
     $stmt->execute();
@@ -88,7 +108,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close connection
 $conn->close();
-*/
 ?>
          <!-- Sign Up Form -->
          <div id="central_panel">

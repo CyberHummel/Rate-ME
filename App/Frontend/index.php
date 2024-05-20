@@ -6,11 +6,11 @@
 <body>
   <?php
 //basic information
-/*
+
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$dbname = "your_database_name";
+$username = "root";
+$password = "";
+$dbname = "rate_me";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 }
 
 // Prepare and bind
-$stmt = $conn->prepare("SELECT id, name, email FROM users WHERE name =?");
+$stmt = $conn->prepare("SELECT userid, name, email FROM users WHERE name =?");
 $stmt->bind_param("s", $name);
 
 // Set parameters and execute
@@ -41,12 +41,12 @@ $stmt->close();
 
 // Close connection
 $conn->close();
-*/
+
 ?>
 
 
 <?php
-/*
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -55,20 +55,19 @@ if ($conn->connect_error) {
     die("Connection failed: ". $conn->connect_error);
 }
 
-// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
     // Prepare and bind
-    $stmt = $conn->prepare("SELECT id, name, email FROM users WHERE name =? AND password =?");
+    $stmt = $conn->prepare("SELECT userid, name, email FROM users WHERE name =? AND password =?");
     $stmt->bind_param("ss", $username, $password);
 
     // Execute
     $stmt->execute();
 
     // Bind result variables
-    $stmt->bind_result($id, $name, $email);
+    $stmt->bind_result($userid, $name, $email);
 
     // Fetch value
     if ($stmt->fetch()) {
@@ -86,8 +85,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close connection
 $conn->close();
-*/
 ?>
+
+
+
 <div id="central_panel" >
   <div id="header">
     <H1>Sign in</H1>
