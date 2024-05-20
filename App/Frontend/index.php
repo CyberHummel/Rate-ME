@@ -6,7 +6,6 @@
 </head>
 <body>
   <?php
-  /*
 //basic information
 
 $servername = "localhost";
@@ -97,9 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close connection
 $conn->close();
-*/
 ?>
-
 
 
 <div id="central_panel">
