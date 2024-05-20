@@ -100,6 +100,8 @@ $conn->close();
   <input id="password" name="password" required="" type="password" />
   <input name="login" type="submit" value="Login" />
 </form>
-<a href="register.php"> New Here?</a>
+<div class="button-container">
+<a href="register.php" class="small-button"> New Here?</a>
+</div>
 </div>
 </body>

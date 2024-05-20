@@ -90,7 +90,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 */
 ?>
-
          <!-- Sign Up Form -->
          <div id="central_panel">
          <h1>Sign Up</h1>
@@ -107,6 +106,9 @@ $conn->close();
   <input id="city" name="city" type="text" />
   <input name="register" type="submit" value="Register" />
 </form>
+<div class="button-container">
+      <a href="index.php" class="small-button">Sign in</a>
+    </div>
          </div>
 
         
