@@ -6,16 +6,20 @@
 </head>
 <body>
   <?php
+  /*
 //basic information
 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "rate_me";
+// big Problems !!!!!!!!!!!!!!! es behauptet wenn man es im terminal ausführt es sei geladen im browser sagt es nicht geladen wtf
 if (extension_loaded('mysqli')) {
-  echo "MySQLi extension is enabled";
+  echo "The MySQLi extension is loaded.";
+  flush();
 } else {
-  echo "MySQLi extension is not enabled";
+  echo "The MySQLi extension is not loaded.";
+  flush();
 }
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,6 +28,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   error_log("Connection failed: " . $conn->connect_error);
     die("Connection failed: ". $conn->connect_error);
+}else {
+  echo"connection succesfull";
 }
 
 // Prepare and bind
@@ -91,6 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close connection
 $conn->close();
+*/
 ?>
 
 

@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="design.css">
     </head>
     <body>
-    <?php
+    <?php /*
 //basic information
 $servername = "localhost";
 $username = "root";
@@ -108,6 +108,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close connection
 $conn->close();
+
+*/
 ?>
          <!-- Sign Up Form -->
          <div id="central_panel">
