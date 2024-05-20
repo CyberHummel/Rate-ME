@@ -29,7 +29,7 @@ if ($conn->connect_error) {
   error_log("Connection failed: " . $conn->connect_error);
   die("Connection failed: " . $conn->connect_error);
 } else {
-  echo "Connection successful";
+  //echo "Connection successful";
 }
 
 // Prepare and bind
@@ -73,6 +73,7 @@ if ($conn->connect_error) {
 if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
+  
 
   // Prepare and bind
   $stmt = $conn->prepare("SELECT userid, name, email, password FROM users WHERE name = ?");
@@ -102,6 +103,7 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
   // Close statement
   $stmt->close();
 }
+
 
 // Close connection
 $conn->close();
