@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
   <title>Rate ME!!!!</title>
   <link rel="stylesheet" type="text/css" href="design.css">
@@ -21,8 +22,8 @@ if ($conn->connect_error) {
 }
 
 // Prepare and bind
-$stmt = $conn->prepare("SELECT userid, name, email FROM users WHERE name =?");
-$stmt->bind_param("s", $name);
+$stmt = $conn->prepare("SELECT userid, name, email FROM users WHERE name = ? AND password = ?");
+$stmt->bind_param("ss", $name, $password);
 
 // Set parameters and execute
 $name = "John Doe";
@@ -89,20 +90,21 @@ $conn->close();
 
 
 
-<div id="central_panel" >
+<div id="central_panel">
   <div id="header">
-    <H1>Sign in</H1>
+    <h1>Sign in</h1>
   </div>
- <!-- Sign In Form -->
-<form action="login.php" method="post">
-  <label for="username">Username:</label>
-  <input id="username" name="username" required="" type="text" />
-  <label for="password">Password:</label>
-  <input id="password" name="password" required="" type="password" />
-  <input name="login" type="submit" value="Login" />
-</form>
-<div class="button-container">
-<a href="register.php" class="small-button"> New Here?</a>
-</div>
+  <!-- Sign In Form -->
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+    <label for="username">Username:</label>
+    <input id="username" name="username" required type="text" />
+    <label for="password">Password:</label>
+    <input id="password" name="password" required type="password" />
+    <input name="login" type="submit" value="Login" />
+  </form>
+  <div class="button-container">
+    <a href="register.php" class="small-button">New Here?</a>
+  </div>
 </div>
 </body>
+</html>
