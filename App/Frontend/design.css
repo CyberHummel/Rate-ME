@@ -25,3 +25,12 @@
     width: fit-content;
     margin: 0 auto;
   }
+  .post {
+    background-color: #494848; /* Grey color */
+    border-radius: 5px; /* Rounded edges */
+    padding: 10px; /* Add some padding for better look */
+    text-align: center; /* Center the text */
+    display: flex;
+    justify-content: center; /* Center the div */
+    align-items: center; /* Center the div */
+  }
