@@ -5,6 +5,11 @@ hei:)
 
 Miro Board:
   https://miro.com/app/board/uXjVKQioDBY=/
+Hilfsmittel:
+https://getbootstrap.com/
+https://www.w3schools.com/
+https://www.blackbox.ai/ (vorallem die VScode extension)
+
 
 
 # What is it about?
