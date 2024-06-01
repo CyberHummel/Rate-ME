@@ -3,13 +3,13 @@
 Github Repo for Development of the "Rate ME" Web app
 hei:)
 
-Miro Board:
+###Miro Board:
   https://miro.com/app/board/uXjVKQioDBY=/
   
-# Hilfsmittel:
-https://getbootstrap.com/docs/5.3/getting-started/introduction/ \n
-https://www.w3schools.com/
-https://www.blackbox.ai/ (vorallem die VScode extension)
+## Hilfsmittel:
+1. https://getbootstrap.com/docs/5.3/getting-started/introduction/
+2. https://www.w3schools.com/
+3. https://www.blackbox.ai/ (vorallem die VScode extension)
 
 
 
