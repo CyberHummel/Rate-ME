@@ -5,7 +5,8 @@ hei:)
 
 Miro Board:
   https://miro.com/app/board/uXjVKQioDBY=/
-Hilfsmittel:
+  
+# Hilfsmittel:
 https://getbootstrap.com/docs/5.3/getting-started/introduction/
 https://www.w3schools.com/
 https://www.blackbox.ai/ (vorallem die VScode extension)
