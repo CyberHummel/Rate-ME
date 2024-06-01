@@ -3,7 +3,7 @@
 Github Repo for Development of the "Rate ME" Web app
 hei:)
 
-###Miro Board:
+### Miro Board:
   https://miro.com/app/board/uXjVKQioDBY=/
   
 ## Hilfsmittel:
