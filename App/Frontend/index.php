@@ -123,7 +123,7 @@ $conn->close();
     <input name="login" type="submit" value="Login" />
   </form>
   <div class="button-container">
-    <a href="register.php" class="small-button">New Here?</a>
+    <a href="../Backend/register.php" class="small-button">New Here?</a>
   </div>
 </div>
 </body>

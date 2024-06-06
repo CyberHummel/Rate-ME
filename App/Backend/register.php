@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="design.css">
+    <link rel="stylesheet" type="text/css" href="../Frontend/design.css">
 </head>
 <body>
 <?php 
@@ -10,7 +10,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "rate_me";
+$dbname = "if0_36188364_rate_me";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -110,7 +110,7 @@ $conn->close();
         <input name="register" type="submit" value="Register" />
     </form>
     <div class="button-container">
-        <a id="registerbutton" href="index.php" class="small-button">Sign in</a>
+        <a id="registerbutton" href="../Frontend/index.php" class="small-button">Sign in</a>
     </div>
 </div>
 </body>
