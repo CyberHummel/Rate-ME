@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../Frontend/design.css">
     <link rel="stylesheet" type="text/css" href="../Frontend/home.css">
 </head>
-<body class="backround" style="height: 1000px;>
+<body class="backround" style="height: 1000px;">
 
 <?php 
 // Basic information

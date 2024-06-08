@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rate ME!!!!</title>
+  <title>Welcome back</title>
   <link rel="stylesheet" type="text/css" href="design.css">
+  <link rel="stylesheet" type="text/css" href="../Frontend/home.css">
 </head>
-<body>
+<body class="backround" style="height: 1000px;" >
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 // Funktionen definieren
 
 // Eingaben validieren
@@ -34,9 +37,11 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Überprüfen, ob ein POST-Request vorliegt (wenn das Formular abgesendet wurde)
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Eingegebene Benutzerdaten validieren
+
+if (isset($_SERVER['REQUEST_METHOD'])) {
+  // Überprüfen, ob die Anfrage per POST erfolgt
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     // Eingegebene Benutzerdaten validieren
   $username = validateInput($_POST["username"]);
   $password = validateInput($_POST["password"]);
 
@@ -50,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($stmt->fetch()) {
     // Passwortüberprüfung
     if ($password === $user_password) {
-      // Bei erfolgreicher Anmeldung den Benutzer weiterleiten
-      redirect('home.php');
+      
+      //redirect('home.php');
     } else {
       // Benutzername oder Passwort ungültig
       echo "Invalid username or password";
@@ -63,11 +68,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Statement schließen
   $stmt->close();
+  }
 }
+
 
 // Verbindung schließen
 $conn->close();
 ?>
+
+ <!-- headline banner -->
+ <div class="fixed-top container" style="background-color:rgba(255,255,255,0.9)">
+        <h1 class="h1 text-center rate-me_headline">RateME</h1>
+    </div>
 <div id="central_panel">
   <div id="header">
     <h1>Sign in</h1>
@@ -78,6 +90,7 @@ $conn->close();
     <input id="username" name="username" required type="text" />
     <label for="password">Password:</label>
     <input id="password" name="password" required type="password" />
+    <!-- wennn das hier gedrückt wird --> 
     <input name="login" type="submit" value="Login"  />
   </form>
   <div class="button-container">
