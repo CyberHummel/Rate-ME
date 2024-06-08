@@ -17,4 +17,6 @@ if ($conn->connect_error) {
     echo "Connection successful!";
     flush(); // or ob_flush();
 }
+
+echo $_SERVER["REQUEST_METHOD"];
 ?>
