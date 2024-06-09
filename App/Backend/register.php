@@ -119,6 +119,9 @@ $conn->close();
             <input id="city" name="city" type="text" />
             <input name="register" type="submit" value="Register" />
         </form>
+        <div class="button-container">
+    <a href="../Frontend/index.php" class="small-button">already part of this awesome community?</a>
+  </div>
     </div>
 
 </body>

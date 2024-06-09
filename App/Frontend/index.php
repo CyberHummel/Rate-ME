@@ -83,6 +83,7 @@ $conn->close();
 <div id="central_panel">
   <div id="header">
     <h1>Sign in</h1>
+
   </div>
   <!-- Anmeldeformular -->
   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -90,9 +91,9 @@ $conn->close();
     <input id="username" name="username" required type="text" />
     <label for="password">Password:</label>
     <input id="password" name="password" required type="password" />
-    <!-- wennn das hier gedrückt wird --> 
+    <!-- wennn das hier gedrückt wird passiert nichts --> 
     <input name="login" type="submit" value="Login"  />
-  </form>
+  </>
   <div class="button-container">
     <a href="../Backend/register.php" class="small-button">New Here?</a>
   </div>
