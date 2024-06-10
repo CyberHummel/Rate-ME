@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-$post_id = 1;
+$post_id = 11;
 
 function get_post($post_id) {
 
@@ -22,12 +22,12 @@ function get_post($post_id) {
 function get_post_content($post_id)
 {
     $conn = connect_db();
-    $sql = "SELECT post_content_ID FROM post WHERE post_id = $post_id";
+    $sql = "SELECT post_content_ID FROM post_ids WHERE post_ID = $post_id";
     $result = mysqli_query($conn, $sql);
+
     if(!is_null($result)){
         $post_content_id = mysqli_fetch_assoc($result);
         $post_content_id = $post_content_id['post_content_ID'];
-
         $sql ="SELECT * FROM post_content WHERE post_content_ID = $post_content_id";
         $result = mysqli_query($conn, $sql);
 
@@ -47,7 +47,12 @@ function get_views($post_id){
 }
 
 function get_rating($post_id){
-    return get_post($post_id)[1];
+    if(is_null(get_post($post_id)[1])){
+        return 0;
+    }else{
+        return get_post($post_id)[1];
+    }
+
 }
 
 function get_Headline($post_id)
@@ -64,4 +69,5 @@ function get_image($post_id)
 {
     return get_post_content($post_id)[2];
 }
+
 

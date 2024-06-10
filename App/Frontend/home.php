@@ -18,7 +18,7 @@
         </div>
         
         <div class="container rounded shadow mb-3" style="margin-top: 15%;">
-            <h5><?php include "get_post.php"; echo get_Headline(1);?></h5>  <!--TODO: ID of the post automatically set with Algorithm-->
+            <h5><?php include "get_post.php"; echo get_Headline(11);?></h5>  <!--TODO: ID of the post automatically set with Algorithm-->
             <div class="rounded shadow mb-8">
                 <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2">
                 <h6 class="ml-2">Marius_Flugel</h6>
@@ -32,27 +32,34 @@
             <div class="text-center rounded container shadow">
                 <br>
                 <img src="https://picsum.photos/200" alt=""> <!--TODO: Image in Database -->
-                <p style="text-align: left;" class="mt-2"><?php echo get_description(1);?></p> <!--Multiple Spans for different Hashtags, also make clickable--> <!--TODO: ID of the post automatically set with Algorithm-->
+                <p style="text-align: left;" class="mt-2"><?php echo get_description(11);?></p> <!--Multiple Spans for different Hashtags, also make clickable--> <!--TODO: ID of the post automatically set with Algorithm-->
                 <div class="text-left row mt-4">
                     <i class="fa fa-commenting-o fa-2xl ml-4"></i>
                     <?php
-                    $ID = 1; //<!--TODO:ID of the post automatically set with Algorithm-->
+                    $ID = 11; //<!--TODO:ID of the post automatically set with Algorithm-->
                     $rating = get_rating($ID);
+                    if (is_null($rating)){
+                        echo 0.0;
+                    }
+                    else{
                     if($rating >= 20){ ?>
-                    <i class="fa fa-star fa-2xl"></i>
-                   <?php }
+                        <i class="fa fa-star fa-2xl"></i>
+                    <?php }
                     if( $rating >= 40){ ?>
-                    <i class="fa fa-star fa-2xl"></i>
+                        <i class="fa fa-star fa-2xl"></i>
                     <?php }
                     if ($rating >= 60){ ?>
-                    <i class="fa fa-star fa-2xl"></i>
+                        <i class="fa fa-star fa-2xl"></i>
                     <?php }
 
                     if($rating >= 80){ ?>
-                    <i class="fa fa-star fa-2xl"></i>
+                        <i class="fa fa-star fa-2xl"></i>
                     <?php }
+                    }
                     ?>
-                    <h5>Views: <?php $ID = 1; echo get_views($ID);?> </h5> <!-- TODO:ID of the post automatically set with Algorithm-->
+
+
+                    <h5>Views: <?php $ID = 11; if( is_null(get_views($ID)) ) echo 0; else echo get_views($ID);?> </h5> <!-- TODO:ID of the post automatically set with Algorithm-->
                 </div>
             </div>
             <br>
@@ -62,11 +69,13 @@
         <br>
         <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
         <!-- einbettung in a tag um es als link benutzen zu können-->
-        <a href="friends.php" style="text-decoration: none;">
+            <a href="friends.php" style="text-decoration: none; color: black;">
                 <i class="fa-solid fa-user-group fa-2xl" style="margin-right: 1%; vertical-align: bottom;"></i>
             </a>
-            <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
-            <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
+            <a href="add_post.php" style="text-decoration: none; color: black;">
+                <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
+            </a>
+                <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
         </div>
         <br>
     </div>
