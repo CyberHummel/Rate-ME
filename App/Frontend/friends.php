@@ -1,3 +1,48 @@
+
+<?php
+/*
+include_once 'connect.php'; // Include the database connection file
+// variable deklarieren
+$user1_id; 
+$user2_id;
+// Function to add a friend
+function addFriend($user1_id, $user2_id, $conn) {
+    // Check if users are already friends
+    if (areFriends($user1_id, $user2_id, $conn)) {
+        echo "Users are already friends.";
+        return; // Exit the function if they are already friends
+    }
+
+    // Add friendship
+    $sql = "INSERT INTO user_friend (user_1_ID, user_2_ID) VALUES ($user1_id, $user2_id)";
+    if ($conn->query($sql) === TRUE) {
+        echo "Friend added successfully.";
+    } else {
+        echo "Error adding friend: " . $conn->error;
+    }
+}
+
+// Function to check if users are friends
+function areFriends($user1_id, $user2_id, $conn) {
+    // Check if the friendship exists
+    $sql = "SELECT * FROM user_friend WHERE (user_1_ID = $user1_id AND user_2_ID = $user2_id) OR (user_1_ID = $user2_id AND user_2_ID = $user1_id)";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Database connection
+$conn = connect_db();
+
+// Close database connection
+$conn->close();
+*/
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
