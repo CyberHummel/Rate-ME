@@ -2,7 +2,9 @@
 <?php
 /*
 include_once 'connect.php'; // Include the database connection file
-
+// variable deklarieren
+$user1_id; 
+$user2_id;
 // Function to add a friend
 function addFriend($user1_id, $user2_id, $conn) {
     // Check if users are already friends
