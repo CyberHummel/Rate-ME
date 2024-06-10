@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 06. Jun 2024 um 14:42
+-- Erstellungszeit: 10. Jun 2024 um 16:38
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -81,6 +81,32 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Daten für Tabelle `user`
+--
+
+INSERT INTO `user` (`user_pre_name`, `user_sur_name`, `user_username`, `user_email`, `user_rating`, `user_password`, `user_id`, `user_join_date`) VALUES
+('asdasd', 'asdasd', 'asdasd', 'asdasd@sadsdasd', 0, '$2y$10$YeocXVRnRyuaK', 1, '2024-06-09'),
+('asdasd', 'sadasdasd', 'derMarius', 'asdasdas@sdasd', 0, '1', 2, '2024-06-09');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `user_friend`
+--
+
+CREATE TABLE `user_friend` (
+  `user_1_ID` int(11) NOT NULL,
+  `user_2_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Daten für Tabelle `user_friend`
+--
+
+INSERT INTO `user_friend` (`user_1_ID`, `user_2_ID`) VALUES
+(1, 2);
+
+--
 -- Indizes der exportierten Tabellen
 --
 
@@ -123,7 +149,7 @@ ALTER TABLE `post_content`
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints der exportierten Tabellen
