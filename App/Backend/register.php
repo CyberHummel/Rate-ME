@@ -42,7 +42,7 @@ if ($stmt->fetch()) {
 // Close statement
 $stmt->close();
 
-// isset überprüft ob die methode REQUEST_METHOD auch wirklich exisitiert innerhalb $_Server
+
 //== poststellt sicher das das ganze nur beim absenden des formulars ausgeführt wird
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pre_name = $_POST["pre_name"];
