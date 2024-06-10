@@ -55,8 +55,9 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
   if ($stmt->fetch()) {
     // Passwortüberprüfung
     if ($password === $user_password) {
-      
+        
       //redirect('home.php');
+      header("Location: home.php");
     } else {
       // Benutzername oder Passwort ungültig
       echo "Invalid username or password";
