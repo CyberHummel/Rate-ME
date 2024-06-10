@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Jun 2024 um 16:38
+-- Erstellungszeit: 10. Jun 2024 um 18:13
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -31,16 +31,17 @@ CREATE TABLE `post` (
   `post_date` date NOT NULL DEFAULT current_timestamp(),
   `post_ID` int(11) NOT NULL,
   `post_rating` int(120) NOT NULL,
-  `post_views` int(11) NOT NULL,
-  `post_content_ID` int(11) NOT NULL
+  `post_views` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `post`
 --
 
-INSERT INTO `post` (`post_date`, `post_ID`, `post_rating`, `post_views`, `post_content_ID`) VALUES
-('2024-06-06', 1, 60, 2344, 1);
+INSERT INTO `post` (`post_date`, `post_ID`, `post_rating`, `post_views`) VALUES
+('2024-06-10', 10, 0, 0),
+('2024-06-10', 11, 0, 0),
+('2024-06-10', 12, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -49,7 +50,6 @@ INSERT INTO `post` (`post_date`, `post_ID`, `post_rating`, `post_views`, `post_c
 --
 
 CREATE TABLE `post_content` (
-  `post_ID` int(11) NOT NULL,
   `post_content_ID` int(11) NOT NULL,
   `post_content_headline` varchar(20) NOT NULL,
   `post_content_description` text NOT NULL,
@@ -60,8 +60,30 @@ CREATE TABLE `post_content` (
 -- Daten für Tabelle `post_content`
 --
 
-INSERT INTO `post_content` (`post_ID`, `post_content_ID`, `post_content_headline`, `post_content_description`, `post_content_image`) VALUES
-(1, 1, 'Hello', 'Ayo Ayo', '');
+INSERT INTO `post_content` (`post_content_ID`, `post_content_headline`, `post_content_description`, `post_content_image`) VALUES
+(9, 'Test ', 'sad', ''),
+(10, 'Test ', 'sad', ''),
+(11, 'Test', 'asdasd', '');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `post_ids`
+--
+
+CREATE TABLE `post_ids` (
+  `post_ID` int(11) NOT NULL,
+  `post_content_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Daten für Tabelle `post_ids`
+--
+
+INSERT INTO `post_ids` (`post_ID`, `post_content_ID`) VALUES
+(10, 9),
+(11, 10),
+(12, 11);
 
 -- --------------------------------------------------------
 
@@ -120,8 +142,7 @@ ALTER TABLE `post`
 -- Indizes für die Tabelle `post_content`
 --
 ALTER TABLE `post_content`
-  ADD PRIMARY KEY (`post_content_ID`),
-  ADD KEY `post_ID` (`post_ID`);
+  ADD PRIMARY KEY (`post_content_ID`);
 
 --
 -- Indizes für die Tabelle `user`
@@ -137,29 +158,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT für Tabelle `post_content`
 --
 ALTER TABLE `post_content`
-  MODIFY `post_content_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `post_content_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Constraints der exportierten Tabellen
---
-
---
--- Constraints der Tabelle `post_content`
---
-ALTER TABLE `post_content`
-  ADD CONSTRAINT `post_ID` FOREIGN KEY (`post_ID`) REFERENCES `post` (`post_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
