@@ -20,14 +20,14 @@
         <div class="container rounded shadow mb-3" style="margin-top: 15%;">
             <h5><?php include "get_post.php"; echo get_Headline(11);?></h5>  <!--TODO: ID of the post automatically set with Algorithm-->
             <div class="rounded shadow mb-8">
-                <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2">
-                <h6 class="ml-2">Marius_Flugel</h6>
+                <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2"> <!--TODO: Image in Database -->
+                <h6 class="ml-2">Marius_Flugel</h6> <!--TODO: Get Post Creator/User-->
                 <i class="fa fa-star fa-2xl ml-2"></i>
                 <i class="fa fa-star fa-2xl"></i>
                 <i class="fa fa-star fa-2xl"></i>
                 <i class="fa fa-star fa-2xl" style="margin-bottom: 7%;"></i>
             </div>
-    
+
             <br>
             <div class="text-center rounded container shadow">
                 <br>
@@ -63,8 +63,15 @@
                 </div>
             </div>
             <br>
+            <?php include "post1.php";?>
+            <?php include "post2.php";?>
+            <?php include "post3.php";?>
+            <?php include "post4.php";?>
+            <?php include "post5.php";?>
         </div>
         <h1></h1>
+
+
         
         <br>
         <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">

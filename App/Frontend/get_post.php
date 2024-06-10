@@ -1,6 +1,7 @@
 <?php
 include "connect.php";
-$post_id = 11;
+
+
 
 function get_post($post_id) {
 
@@ -18,6 +19,7 @@ function get_post($post_id) {
         }
     }
 }
+
 
 function get_post_content($post_id)
 {
@@ -70,4 +72,15 @@ function get_image($post_id)
     return get_post_content($post_id)[2];
 }
 
-
+function get_20_newest_posts()
+{
+    $conn = connect_db();
+    $sql = "SELECT post_ID FROM post ORDER BY post_date LIMIT 20";
+    $result = mysqli_query($conn, $sql);
+    $result_array = array();
+    while($row = mysqli_fetch_array($result))
+    {
+        $result_array[] = $row["post_ID"];
+    }
+    return $result_array;
+}
