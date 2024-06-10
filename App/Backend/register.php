@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute
     if ($stmt->execute()) {
        // echo "Registration successful!";
-        header("Location: home.php");
+        header("Location: /App/Frontend/home.php");
     } else {
         echo "Error registering user: " . $stmt->error;
     }
