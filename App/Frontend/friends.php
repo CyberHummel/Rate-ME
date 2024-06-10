@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" crossorigin="anonymous"> <!-- Bootstrap -->
     <script src="https://kit.fontawesome.com/c5f3357375.js" crossorigin="anonymous"></script> <!-- FontAwesome für Icons -->
     <style>
-        /* Stil für die "Feature coming soon" Nachricht und den "Back Home" Button */
+        /* Stil für die "Feature coming soon" Nachricht und den "Back Home" Button  */
         .feature-message {
             font-size: 3em;
             text-align: center;

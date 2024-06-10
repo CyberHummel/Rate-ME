@@ -8,7 +8,8 @@
 <body class="backround" style="height: 1000px;">
 
 <?php 
-// Basic information
+// englische kommentare grundsätzlich ki kommentare ~marius
+// Basic information / könnte auch connect.php nehmen aber habe das vor der erschaffung dieser geschrieben und keine Lust jetz was kaputt zu machen, es funtkioniert also fasse ichs nicht mehr an :)
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -52,7 +53,7 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     $street = $_POST["street"];
     $city = $_POST["city"];
 
-    // Check if email is already in use
+    // Check if email is already in use // die checks sind von chat gpt :Schreibe PHP-Code der überprüft ob eine E-Mail bereits in der Datenbank verwendet wird. Falls die E-Mail bereits existiert, soll die Meldung 'Email is already in use' angezeigt werden. denke an mögliche fehlerquellen
     $stmt = $conn->prepare("SELECT user_email FROM user WHERE user_email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -98,9 +99,9 @@ $conn->close();
 <div class="fixed-top container" style="background-color:rgba(255,255,255,0.9)">
     <h1 class="h1 text-center rate-me_headline">RateME</h1>
 </div>
-<!-- Sign Up Form -->
+<!-- Sign Up Form / blackbox half mit-->
 <div id="central_panel">
-    <h1>Sign Up</h1>
+    <h1>Sign Up</h1> 
     <form action="register.php" method="post">
         <label for="pre_name">First Name:</label>
         <input id="pre_name" name="pre_name" required="" type="text" />

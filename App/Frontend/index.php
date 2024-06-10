@@ -7,9 +7,13 @@
 </head>
 <body class="backround" style="height: 1000px;" >
 <?php
+// generell blackbox autocomplete m schnerller zu schreiben ~ marius
+
+
+/* feheler finden dies das 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL);*/
 // Funktionen definieren
 
 // Eingaben validieren
@@ -17,14 +21,7 @@ function validateInput($input) {
   return filter_var($input, FILTER_SANITIZE_STRING);
 }
 
-// Weiterleitungsfunktion
-function redirect($url) {
-  header('Location: ' . $url);
-  exit;
-}
-
-
-// Datenbankverbindungsdaten
+// Datenbankverbindungsdaten // gleiches wie bei register.php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -37,15 +34,15 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-
+// isset überprüft ob die methode tatsächlich exitiert bevor ich sie dann aufrufe
 if (isset($_SERVER['REQUEST_METHOD'])) {
-  // Überprüfen, ob die Anfrage per POST erfolgt
+  // Überprüfen ob  Anfrage per POST 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-     // Eingegebene Benutzerdaten validieren
+     // Eingegebene Benutzerdaten checken
   $username = validateInput($_POST["username"]);
   $password = validateInput($_POST["password"]);
 
-  // SQL-Abfrage, um Benutzerdaten abzurufen
+
   $stmt = $conn->prepare("SELECT user_id, user_username, user_password FROM user WHERE user_username = ?");
   $stmt->bind_param("s", $username);
   $stmt->execute();
@@ -56,7 +53,6 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
     // Passwortüberprüfung
     if ($password === $user_password) {
         
-      //redirect('home.php');
       header("Location: home.php");
     } else {
       // Benutzername oder Passwort ungültig
