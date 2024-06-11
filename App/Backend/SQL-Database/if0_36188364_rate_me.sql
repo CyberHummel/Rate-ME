@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Jun 2024 um 18:13
+-- Erstellungszeit: 12. Jun 2024 um 00:44
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -31,26 +31,25 @@ CREATE TABLE `post` (
   `post_date` date NOT NULL DEFAULT current_timestamp(),
   `post_ID` int(11) NOT NULL,
   `post_rating` int(120) NOT NULL,
-  `post_views` int(11) NOT NULL,
-  PRIMARY KEY (`post_ID`)
+  `post_views` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `post`
 --
 
--- Neue Test-Posts einfügen
-INSERT INTO `post` (`post_ID`, `post_date`, `post_rating`, `post_views`) VALUES
-(1, '2024-06-11', 0, 0),
-(2, '2024-06-11', 50, 0),
-(3, '2024-06-11', 100, 0),
-(4, '2024-06-11', 20, 0),
-(5, '2024-06-11', 0, 0),
-(6, '2024-06-11', 80, 0),
-(7, '2024-06-11', 60, 0),
-(8, '2024-06-11', 0, 0),
-(9, '2024-06-11', 0, 0),
-(10, '2024-06-11', 0, 0);
+INSERT INTO `post` (`post_date`, `post_ID`, `post_rating`, `post_views`) VALUES
+('2024-06-11', 1, 100, 0),
+('2024-06-11', 2, 0, 0),
+('2024-06-11', 3, 0, 0),
+('2024-06-11', 4, 0, 0),
+('2024-06-11', 5, 0, 0),
+('2024-06-11', 6, 0, 0),
+('2024-06-11', 7, 0, 0),
+('2024-06-11', 8, 0, 0),
+('2024-06-11', 9, 0, 0),
+('2024-06-11', 10, 0, 0),
+('2024-06-12', 13, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -62,8 +61,7 @@ CREATE TABLE `post_content` (
   `post_content_ID` int(11) NOT NULL,
   `post_content_headline` varchar(20) NOT NULL,
   `post_content_description` text NOT NULL,
-  `post_content_image` blob NOT NULL,
-  PRIMARY KEY (`post_content_ID`)
+  `post_content_image` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -80,7 +78,8 @@ INSERT INTO `post_content` (`post_content_ID`, `post_content_headline`, `post_co
 (16, 'Siebter Post', 'Guten Morgen, Welt!', ''),
 (17, 'Achter Post', 'Ein Lächeln am Morgen vertreibt Kummer und Sorgen.', ''),
 (18, 'Neunter Post', 'Carpe Diem!', ''),
-(19, 'Zehnter Post', 'Träume nicht dein Leben, sondern lebe deinen Traum.', '');
+(19, 'Zehnter Post', 'Träume nicht dein Leben, sondern lebe deinen Traum.', ''),
+(20, '1', '1', '');
 
 -- --------------------------------------------------------
 
@@ -90,13 +89,13 @@ INSERT INTO `post_content` (`post_content_ID`, `post_content_headline`, `post_co
 
 CREATE TABLE `post_ids` (
   `post_ID` int(11) NOT NULL,
-  `post_content_ID` int(11) NOT NULL,
-  PRIMARY KEY (`post_ID`, `post_content_ID`)
+  `post_content_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `post_ids`
 --
+
 INSERT INTO `post_ids` (`post_ID`, `post_content_ID`) VALUES
 (1, 10),
 (2, 11),
@@ -107,7 +106,8 @@ INSERT INTO `post_ids` (`post_ID`, `post_content_ID`) VALUES
 (7, 16),
 (8, 17),
 (9, 18),
-(10, 19);
+(10, 19),
+(13, 20);
 
 -- --------------------------------------------------------
 
@@ -123,21 +123,20 @@ CREATE TABLE `user` (
   `user_rating` int(120) NOT NULL,
   `user_password` varchar(20) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `user_join_date` date NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`user_id`)
+  `user_join_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `user`
 --
 
--- Neue Test-Benutzer einfügen
 INSERT INTO `user` (`user_pre_name`, `user_sur_name`, `user_username`, `user_email`, `user_rating`, `user_password`, `user_id`, `user_join_date`) VALUES
 ('Maximus', 'der Große', 'maximusDerGroße', 'maximus@example.com', 0, 'pass123', 3, '2024-06-11'),
 ('Anna', 'Schmidt', 'annaDasSchnidchen', 'anna.schmidt@example.com', 0, 'password456', 4, '2024-06-11'),
 ('Tom', 'Meier', 'tomHatEier', 'tom.meier@example.com', 0, 'password789', 5, '2024-06-11'),
 ('Lena', 'Müller', 'beiLenaMuellerts', 'lena.mueller@example.com', 0, 'passwordabc', 6, '2024-06-11'),
-('David', 'Schulz', 'davidSchulzMachtSyncro', 'david.schulz@example.com', 0, 'passworddef', 7, '2024-06-11');
+('David', 'Schulz', 'davidSchulzMachtSyncro', 'david.schulz@example.com', 0, 'passworddef', 7, '2024-06-11'),
+('Maximus', 'Nolte', '1', '1@1', 100, '1', 8, '2024-06-11');
 
 -- --------------------------------------------------------
 
@@ -147,8 +146,7 @@ INSERT INTO `user` (`user_pre_name`, `user_sur_name`, `user_username`, `user_ema
 
 CREATE TABLE `user_friend` (
   `user_1_ID` int(11) NOT NULL,
-  `user_2_ID` int(11) NOT NULL,
-  PRIMARY KEY (`user_1_ID`, `user_2_ID`)
+  `user_2_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -166,10 +164,7 @@ INSERT INTO `user_friend` (`user_1_ID`, `user_2_ID`) VALUES
 
 CREATE TABLE `user_posts` (
   `user_id` int(11) NOT NULL,
-  `post_ID` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`, `post_ID`),
-  FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (`post_ID`) REFERENCES `post`(`post_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+  `post_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -177,53 +172,90 @@ CREATE TABLE `user_posts` (
 --
 
 INSERT INTO `user_posts` (`user_id`, `post_ID`) VALUES
-(3, 1),  -- Maximus der Große
+(3, 1),
 (3, 2),
-(4, 3),  -- Anna Schmidt
+(4, 3),
 (4, 4),
-(5, 5),  -- Tom Meier
+(5, 5),
 (5, 6),
-(6, 7),  -- Lena Müller
+(6, 7),
 (6, 8),
-(7, 9),  -- David Schulz
+(7, 9),
 (7, 10);
 
 --
--- Tabellenstruktur für Tabelle post_likes
+-- Indizes der exportierten Tabellen
 --
-    CREATE TABLE `post_likes` (
-  `like_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `post_ID` int(11) NOT NULL,
-  `like_type` enum('like','dislike') NOT NULL,
-  PRIMARY KEY (`like_id`),
-  UNIQUE KEY `unique_like` (`user_id`,`post_ID`),
-  FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (`post_ID`) REFERENCES `post`(`post_ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
--- für likes
+-- Indizes für die Tabelle `post`
 --
-    ALTER TABLE `post` 
-  ADD COLUMN `post_likes` INT NOT NULL DEFAULT 0,
-  ADD COLUMN `post_dislikes` INT NOT NULL DEFAULT 0;
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`post_ID`);
+
+--
+-- Indizes für die Tabelle `post_content`
+--
+ALTER TABLE `post_content`
+  ADD PRIMARY KEY (`post_content_ID`);
+
+--
+-- Indizes für die Tabelle `post_ids`
+--
+ALTER TABLE `post_ids`
+  ADD PRIMARY KEY (`post_ID`,`post_content_ID`);
+
+--
+-- Indizes für die Tabelle `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indizes für die Tabelle `user_friend`
+--
+ALTER TABLE `user_friend`
+  ADD PRIMARY KEY (`user_1_ID`,`user_2_ID`);
+
+--
+-- Indizes für die Tabelle `user_posts`
+--
+ALTER TABLE `user_posts`
+  ADD PRIMARY KEY (`user_id`,`post_ID`),
+  ADD KEY `post_ID` (`post_ID`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
 --
 -- AUTO_INCREMENT für Tabelle `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT für Tabelle `post_content`
 --
 ALTER TABLE `post_content`
-  MODIFY `post_content_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `post_content_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Constraints der exportierten Tabellen
+--
+
+--
+-- Constraints der Tabelle `user_posts`
+--
+ALTER TABLE `user_posts`
+  ADD CONSTRAINT `user_posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_posts_ibfk_2` FOREIGN KEY (`post_ID`) REFERENCES `post` (`post_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
