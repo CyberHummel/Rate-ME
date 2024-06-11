@@ -63,8 +63,10 @@
         </div>
         <h2 class="h2 text-left">Your Friends:</h2>
         <!--TODO: Hier die Friends ausgeben -->
-        <div class="container rounded shadow mb-3">
-            <h4 class="feature-message" style="color: #007bff">Feature coming soon</h4>
+
+        <div class="container rounded shadow mb-3 row">
+            <h4 class="feature-message" style="color: #007bff">Feature coming soon or you dont have any :(   </h4>
+            <div class="tenor-gif-embed ml-2"  data-postid="16353173" data-share-method="host" data-aspect-ratio="1" data-width="5%"><a href="https://tenor.com/view/bang-my-head-irritated-oh-no-no-way-problematic-gif-16353173">Bang My Head Irritated Sticker</a>from <a href="https://tenor.com/search/bang+my+head-stickers">Bang My Head Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
         </div>
         <h2 class="h2 text-left">Your Posts:</h2>
         <div class="row">
