@@ -83,8 +83,9 @@ $conn->close();
             <h1 class="h1 text-center rate-me_headline">RateME</h1>
         </div>
         <div class="container rounded shadow mb-3">
-            <h1 class="feature-message">Feature coming soon</h1>
+            <h1 class="feature-message" style="color: #007bff">Feature coming soon</h1>
         </div>
+        <div class="tenor-gif-embed" data-postid="16353173" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/bang-my-head-irritated-oh-no-no-way-problematic-gif-16353173">Bang My Head Irritated Sticker</a>from <a href="https://tenor.com/search/bang+my+head-stickers">Bang My Head Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
         <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
             <!-- einbettung in a tag um es als link benutzen zu können-->
