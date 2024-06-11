@@ -35,10 +35,12 @@ function show_post($postid)
         <?php
         $ID = $postid;
         $rating = get_rating($ID);
+        
         if (is_null($rating)){
             echo 0.0;
         }
         else{
+            // jetz einfach immer if else ob rating thresholds ereicht wurden oder nicht
             if($rating >= 20){ ?>
                 <i class="fa fa-star fa-2xl" style="color: gold;"></i>
             <?php }
