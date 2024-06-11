@@ -90,11 +90,14 @@ $conn->close();
     <label for="username">Username:</label>
     <input id="username" name="username" required type="text" />
       <br>
-    <label for="password">Password:</label>
+    <label for="password">Password: </label>
     <input id="password" name="password" required type="password" />
     <!-- wennn das hier gedrückt wird passiert nichts --> 
-    <input name="login" type="submit" value="Login" class="button button-primary rounded" style="margin-left: 10%; color: #007bff; border-width: 0; background-color: rgb(253,253,253)"/>
+    <input name="login" type="submit" value="Login" class="button button-primary rounded" style="margin-left: 15%; color: #007bff; border-width: 0; background-color: rgb(253,253,253)"/>
   </form>
+    <div class="button-container">
+        <a href="../Backend/register.php" class="small-button">Want to join Community?</a>
+    </div>
 
 
 </div>
