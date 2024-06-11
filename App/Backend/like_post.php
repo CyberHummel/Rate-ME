@@ -84,4 +84,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 }
+// TODO rausfindenwarum 1 like gleich zwei likes und fixen
 ?>
