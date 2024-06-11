@@ -85,13 +85,18 @@ $conn->close();
         <div class="container rounded shadow mb-3">
             <h1 class="feature-message">Feature coming soon</h1>
         </div>
-        <div class="back-home-button">
-            <a href="home.php">Back Home</a>
-        </div>
+
         <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
-            <i class="fa-solid fa-user-group fa-2xl" style="margin-right: 1%; vertical-align: bottom;"></i>
-            <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
-            <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
+            <!-- einbettung in a tag um es als link benutzen zu können-->
+            <a href="friends.php" style="text-decoration: none; color: black;">
+                <i class="fa-solid fa-user-group fa-2xl" style="margin-right: 1%; vertical-align: bottom;"></i>
+            </a>
+            <a href="add_post.php" style="text-decoration: none; color: black;">
+                <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
+            </a>
+            <a href="profile_page.php" style="text-decoration: none; color: black;">
+                <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
+            </a>
         </div>
     </div>
 </body>

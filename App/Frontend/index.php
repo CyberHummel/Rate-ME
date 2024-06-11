@@ -93,10 +93,8 @@ $conn->close();
     <input id="password" name="password" required type="password" />
     <!-- wennn das hier gedrückt wird passiert nichts --> 
     <input name="login" type="submit" value="Login"  />
-  </b>
-  <div class="button-container">
-    <a href="../Backend/register.php" class="small-button">New Here?</a>
-  </div>
+  </form>
+
 
 </div>
 </body>
