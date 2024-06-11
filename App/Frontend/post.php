@@ -21,7 +21,8 @@ function show_post($postid)
             <i class="fa fa-star fa-2xl ml-2"></i>
             <i class="fa fa-star fa-2xl"></i>
             <i class="fa fa-star fa-2xl"></i>
-            <i class="fa fa-star fa-2xl" style="margin-bottom: 7%;"></i>
+            <i class="fa fa-star fa-2xl" 
+             style="margin-bottom: 7%;"></i>
         </div>
 
         <br>
