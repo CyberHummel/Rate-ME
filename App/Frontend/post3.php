@@ -1,4 +1,7 @@
 <?php
+include_once 'get_username.php';
+
+
 $postid = get_20_newest_posts()[2];
 ?>
 
@@ -9,7 +12,10 @@ $postid = get_20_newest_posts()[2];
     <h5><?php echo get_Headline($postid);?></h5>  <!--TODO: ID of the post automatically set with Algorithm-->
     <div class="rounded shadow mb-8">
         <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2"> <!--TODO: Image in Database -->
-        <h6 class="ml-2">Marius_Flugel</h6> <!--TODO: Get Post Creator/User-->
+        <h6 class="ml-2"><?php 
+                    $username = getPostCreator($postid);
+                    echo htmlspecialchars($username);
+                ?> </h6> <!--TODO: Get Post Creator/User-->
         <i class="fa fa-star fa-2xl ml-2"></i>
         <i class="fa fa-star fa-2xl"></i>
         <i class="fa fa-star fa-2xl"></i>
