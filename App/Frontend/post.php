@@ -27,38 +27,47 @@ function show_post($postid)
 
         <br>
         <div class="text-center rounded container shadow">
-            <br>
-            <img src="https://picsum.photos/200" alt=""> <!--TODO: Image in Database -->
-            <p style="text-align: left;" class="mt-2"><?php echo get_description($postid);?></p> <!--Multiple Spans for different Hashtags, also make clickable-->
-            <div class="text-left row mt-4">
-                <i class="fa fa-commenting-o fa-2xl ml-4"></i>
-                <?php
-                $ID = $postid;
-                $rating = get_rating($ID);
-                if (is_null($rating)){
-                    echo 0.0;
-                }
-                else{
-                    if($rating >= 20){ ?>
-                        <i class="fa fa-star fa-2xl"></i>
-                    <?php }
-                    if( $rating >= 40){ ?>
-                        <i class="fa fa-star fa-2xl"></i>
-                    <?php }
-                    if ($rating >= 60){ ?>
-                        <i class="fa fa-star fa-2xl"></i>
-                    <?php }
-
-                    if($rating >= 80){ ?>
-                        <i class="fa fa-star fa-2xl"></i>
-                    <?php }
-                }
-                ?>
-
-
-                <h5>Views: <?php $ID = 11; if( is_null(get_views($ID)) ) echo 0; else echo get_views($ID);?> </h5>
-            </div>
-        </div>
+    <br>
+    <img src="https://picsum.photos/200" alt=""> <!--TODO: Image in Database -->
+    <p style="text-align: left;" class="mt-2"><?php echo get_description($postid);?></p> <!--Multiple Spans for different Hashtags, also make clickable-->
+    <div class="text-left row mt-4">
+        <i class="fa fa-commenting-o fa-2xl ml-4"></i>
+        <?php
+        $ID = $postid;
+        $rating = get_rating($ID);
+        if (is_null($rating)){
+            echo 0.0;
+        }
+        else{
+            if($rating >= 20){ ?>
+                <i class="fa fa-star fa-2xl" style="color: gold;"></i>
+            <?php }
+            else { ?>
+                <i class="fa fa-star fa-2xl"></i>
+            <?php }
+            if( $rating >= 40){ ?>
+                <i class="fa fa-star fa-2xl" style="color: gold;"></i>
+            <?php }
+            else { ?>
+                <i class="fa fa-star fa-2xl"></i>
+            <?php }
+            if ($rating >= 60){ ?>
+                <i class="fa fa-star fa-2xl" style="color: gold;"></i>
+            <?php }
+            else { ?>
+                <i class="fa fa-star fa-2xl"></i>
+            <?php }
+            if($rating >= 80){ ?>
+                <i class="fa fa-star fa-2xl" style="color: gold;"></i>
+            <?php }
+            else { ?>
+                <i class="fa fa-star fa-2xl"></i>
+            <?php }
+        }
+        ?>
+        <h5>Views: <?php $ID = 11; if( is_null(get_views($ID)) ) echo 0; else echo get_views($ID);?> </h5>
+    </div>
+</div>
     </html>
 
 
