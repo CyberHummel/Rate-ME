@@ -21,39 +21,68 @@
         <h2 class="h2 text-left">Your Rating:</h2>
         <!--TODO: Hier die Ratings ausgeben -->
         <?php
+        include_once "connect.php";
+        include_once "get_post.php";
+        include_once "post.php";
+
         $ID = $_SESSION["user_ID"];
 
-        $rating = 100;
+        $postIDs = get_newest_posts_from_user_ID($ID);
+
+        $conn = connect_db();
+        $sql = "SELECT user_rating FROM user WHERE user_ID = $ID";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $rating = $row["user_rating"];
+
+        ?>
+        <div class="row ml-2">
+        <?php
+
         if (is_null($rating)){
         echo 0.0;
         }
         else{
         if($rating >= 20){ ?>
-        <i class="fa fa-star fa-2xl"></i>
+        <i class="fa fa-star fa-2xl mt-2"></i>
 
         <?php }
                     if( $rating >= 40){ ?>
-        <i class="fa fa-star fa-2xl"></i>
+        <i class="fa fa-star fa-2xl mt-2"></i>
         <?php }
         if ($rating >= 60){ ?>
-        <i class="fa fa-star fa-2xl"></i>
+        <i class="fa fa-star fa-2xl mt-2"></i>
         <?php }
 
         if($rating >= 80){ ?>
-        <i class="fa fa-star fa-2xl"></i>
+        <i class="fa fa-star fa-2xl mt-2"></i>
         <?php }
         }
         ?>
-
-        <h2 class="h2 text-left">Your Posts:</h2>
-        <!--TODO: Hier die Posts ausgeben -->
+        <h3> = <?php echo $rating; ?></h3>
+        </div>
         <h2 class="h2 text-left">Your Friends:</h2>
         <!--TODO: Hier die Friends ausgeben -->
+        <div class="container rounded shadow mb-3">
+            <h4 class="feature-message" style="color: #007bff">Feature coming soon</h4>
+        </div>
+        <h2 class="h2 text-left">Your Posts:</h2>
+        <div class="row">
+            <div class="col">
+                <?php if(sizeof($postIDs) > 0){ show_post($postIDs[0]);} ?>
+            </div>
+            <div class="col">
+                <?php if(sizeof($postIDs) > 1){ show_post($postIDs[1]);} ?>
+            </div>
+            <div class="col">
+                <?php if(sizeof($postIDs) > 2){ show_post($postIDs[2]);} ?>
+            </div>
+            <div class="col">
+                <?php if(sizeof($postIDs) > 3){ show_post($postIDs[3]);} ?>
+            </div>
+        </div>
+
     </div>
-
-
-
-
 </div>
 
 </body>

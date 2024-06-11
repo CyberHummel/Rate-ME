@@ -1,5 +1,5 @@
 <?php
-include "connect.php";
+include_once "connect.php";
 
 function get_post($post_id) {
     $conn = connect_db();
@@ -90,4 +90,34 @@ function get_20_newest_posts()
         $result_array[] = $row["post_ID"];
     }
     return $result_array;
+}
+
+function get_newest_posts_from_user_ID($userID)
+{
+    $conn = connect_db();
+    $sql = "SELECT post_ID FROM user_posts WHERE user_id = $userID";
+    $result = mysqli_query($conn, $sql);
+    $result_array = array();
+    while($row = mysqli_fetch_array($result))
+    {
+        $result_array[] = $row["post_ID"];
+    }
+    return $result_array;
+}
+
+function check_user_post_ID($userID, $postID)
+{
+    $conn = connect_db();
+    $sql = "SELECT post_ID FROM user_posts WHERE user_id = $userID LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+
+
+    mysqli_fetch_assoc($result);
+
+    if($result["post_ID"] == $postID)
+    {
+        return false;
+    }else{
+        return true;
+    }
 }

@@ -24,11 +24,11 @@ if(!isset($_SESSION['user_username'])) {
     <script src="https://kit.fontawesome.com/c5f3357375.js" crossorigin="anonymous"></script>
 </head>
 <body class="backround" style="height: 1000px;">
-    <div class="container rounded  mb-5 text" style="height: 100%; width: 50%;">
+<!--<video autoplay muted loop id="backround-video"> <source></video> -->
+    <div class="container rounded  mb-5 text content" style="height: 100%; width: 50%;">
         <div class="fixed-top container" style="background-color:rgb(255,255,255,0.9)">
             <h1 class="h1 text-center rate-me_headline">RateME</h1>
         </div>
-
             <?php include "get_post.php";
                 $user_name = $_SESSION["user_username"];
 
