@@ -1,4 +1,4 @@
-<?php
+<?php //<!--Aus Maximus's Gehirn-->
 //connect.php
 function connect_db()
 {
@@ -9,8 +9,7 @@ function connect_db()
     $conn = mysqli_connect($sname, $unmae, $password, $db_name);
     if ($conn) {
         return $conn;
-    }
-    else {
+    } else {
         echo "Connection failed";
     }
 

@@ -1,8 +1,9 @@
-<?php
+<?php //Marius
 // get_username.php
 include_once 'connect.php';
 
-function getPostCreator($postid) {
+function getPostCreator($postid)
+{
     $conn = connect_db(); // Establish database connection
 
     // Check if the connection is successful
@@ -15,7 +16,7 @@ function getPostCreator($postid) {
             FROM user u
             INNER JOIN user_posts up ON u.user_id = up.user_id
             WHERE up.post_ID = ?";
-    
+
     // Prepare the SQL statement
     $stmt = $conn->prepare($sql);
 
@@ -40,4 +41,5 @@ function getPostCreator($postid) {
     // Return the username
     return $user_username;
 }
+
 ?>

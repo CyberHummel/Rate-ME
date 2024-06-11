@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute
     if ($stmt->execute()) {
-       header("Location: /App/Frontend/index.php");
+        header("Location: /App/Frontend/index.php");
     } else {
         echo "Error registering user: " . $stmt->error;
     }
@@ -79,23 +79,23 @@ $conn->close();
 </div>
 <!-- Sign Up Form / blackbox half mit-->
 <div id="central_panel">
-    <h1>Sign Up</h1> 
+    <h1>Sign Up</h1>
     <form action="register.php" method="post">
         <label for="pre_name">First Name:</label>
-        <input id="pre_name" name="pre_name" required="" type="text" />
+        <input id="pre_name" name="pre_name" required="" type="text"/>
         <label for="sur_name">Last Name:</label>
-        <input id="sur_name" name="sur_name" required="" type="text" />
+        <input id="sur_name" name="sur_name" required="" type="text"/>
         <label for="username">Username:</label>
-        <input id="username" name="username" required="" type="text" />
+        <input id="username" name="username" required="" type="text"/>
         <label for="email">Email:</label>
-        <input id="email" name="email" required="" type="email" />
+        <input id="email" name="email" required="" type="email"/>
         <label for="password">Password:</label>
-        <input id="password" name="password" required="" type="password" />
+        <input id="password" name="password" required="" type="password"/>
         <label for="street">Street and Number:</label>
-        <input id="street" name="street" type="text" />
+        <input id="street" name="street" type="text"/>
         <label for="city">City and Postal Code:</label>
-        <input id="city" name="city" type="text" />
-        <input name="register" type="submit" value="Register" />
+        <input id="city" name="city" type="text"/>
+        <input name="register" type="submit" value="Register"/>
     </form>
     <div class="button-container">
         <a href="../Frontend/index.php" class="small-button">already part of this awesome community?</a>

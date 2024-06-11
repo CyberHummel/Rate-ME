@@ -1,8 +1,8 @@
-<?php  
+<?php  //
 // Start der Session
 session_start();
 
-// Überprüfen, ob der Benutzer angemeldet ist
+// Überprüfen, ob der Benutzer angemeldet ist (Marius)
 if(!isset($_SESSION['user_username'])) {
     // Weiterleitung zum index.php
     header("Location: index.php");
@@ -11,7 +11,7 @@ if(!isset($_SESSION['user_username'])) {
     
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> <!--Maximus:-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@ if(!isset($_SESSION['user_username'])) {
     <script src="https://kit.fontawesome.com/c5f3357375.js" crossorigin="anonymous"></script>
 </head>
 <body class="backround" style="height: 1000px;">
-<!--<video autoplay muted loop id="backround-video"> <source></video> -->
+<!--TODO: <video autoplay muted loop id="backround-video"> <source></video> -->
     <div class="container rounded  mb-5 text content" style="height: 100%; width: 50%;">
         <div class="fixed-top container" style="background-color:rgb(255,255,255,0.9)">
             <h1 class="h1 text-center rate-me_headline">RateME</h1>
@@ -59,18 +59,19 @@ if(!isset($_SESSION['user_username'])) {
                 ?>
         </div>
         <br>
-        <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
-        <!-- einbettung in a tag um es als link benutzen zu können-->
-            <a href="friends.php" style="text-decoration: none; color: black;">
-                <i class="fa-solid fa-user-group fa-2xl" style="margin-right: 1%; vertical-align: bottom;"></i>
-            </a>
-            <a href="add_post.php" style="text-decoration: none; color: black;">
-                <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
-            </a>
-            <a href="profile_page.php" style="text-decoration: none; color: black;">
-                <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
-            </a>
-        </div>
+<div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom"
+     style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
+    <!-- einbettung in a tag um es als link benutzen zu können-->
+    <a href="friends.php" style="text-decoration: none; color: black;">
+        <i class="fa-solid fa-user-group fa-2xl" style="margin-right: 1%; vertical-align: bottom;"></i>
+    </a>
+    <a href="add_post.php" style="text-decoration: none; color: black;">
+        <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
+    </a>
+    <a href="profile_page.php" style="text-decoration: none; color: black;">
+        <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
+    </a>
+</div>
         <br>
     </div>
   
