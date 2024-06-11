@@ -73,7 +73,7 @@ if(!isset($_SESSION['user_username'])) {
     </a>
 </div>
         <br>
-    </div>
+
   
 </body>
 </html>

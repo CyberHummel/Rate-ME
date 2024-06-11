@@ -1,5 +1,5 @@
 <!DOCTYPE html> <!--Generelles Layout/Funktion Marius, überarbeitetes Design Maximus-->
-<html>
+<html lang="en">
 <head>
     <title>Welcome back</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"

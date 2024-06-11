@@ -42,4 +42,4 @@ function getPostCreator($postid)
     return $user_username;
 }
 
-?>
+

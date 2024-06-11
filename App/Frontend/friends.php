@@ -61,10 +61,6 @@ $conn->close();
             margin-top: 20%;
         }
 
-        .back-home-button {
-            text-align: center;
-            margin-top: 20px;
-        }
 
         .back-home-button a {
             display: inline-block;

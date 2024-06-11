@@ -12,6 +12,4 @@ function connect_db()
     } else {
         echo "Connection failed";
     }
-
-
 }

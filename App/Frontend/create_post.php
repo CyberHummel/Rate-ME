@@ -41,4 +41,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 //TODO: Connect with User
 
-?>
