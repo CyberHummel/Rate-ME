@@ -11,68 +11,38 @@
     <script src="https://kit.fontawesome.com/c5f3357375.js" crossorigin="anonymous"></script>
 </head>
 <body class="backround" style="height: 1000px;">
-    <div class="container rounded bg-light shadow mb-5 text" style="height: 100%; width: 50%;">
+    <div class="container rounded  mb-5 text" style="height: 100%; width: 50%;">
 
         <div class="fixed-top container" style="background-color:rgb(255,255,255,0.9)">
             <h1 class="h1 text-center rate-me_headline">RateME</h1>
         </div>
-        
-        <div class="container rounded shadow mb-3" style="margin-top: 15%;">
-            <h5><?php include "get_post.php"; echo get_Headline(11);?></h5>  <!--TODO: ID of the post automatically set with Algorithm-->
-            <div class="rounded shadow mb-8">
-                <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2"> <!--TODO: Image in Database -->
-                <h6 class="ml-2">Marius_Flugel</h6> <!--TODO: Get Post Creator/User-->
-                <i class="fa fa-star fa-2xl ml-2"></i>
-                <i class="fa fa-star fa-2xl"></i>
-                <i class="fa fa-star fa-2xl"></i>
-                <i class="fa fa-star fa-2xl" style="margin-bottom: 7%;"></i>
-            </div>
 
-            <br>
-            <div class="text-center rounded container shadow">
-                <br>
-                <img src="https://picsum.photos/200" alt=""> <!--TODO: Image in Database -->
-                <p style="text-align: left;" class="mt-2"><?php echo get_description(11);?></p> <!--Multiple Spans for different Hashtags, also make clickable--> <!--TODO: ID of the post automatically set with Algorithm-->
-                <div class="text-left row mt-4">
-                    <i class="fa fa-commenting-o fa-2xl ml-4"></i>
-                    <?php
-                    $ID = 11; //<!--TODO:ID of the post automatically set with Algorithm-->
-                    $rating = get_rating($ID);
-                    if (is_null($rating)){
-                        echo 0.0;
-                    }
-                    else{
-                    if($rating >= 20){ ?>
-                        <i class="fa fa-star fa-2xl"></i>
-                    <?php }
-                    if( $rating >= 40){ ?>
-                        <i class="fa fa-star fa-2xl"></i>
-                    <?php }
-                    if ($rating >= 60){ ?>
-                        <i class="fa fa-star fa-2xl"></i>
-                    <?php }
+            <?php include "get_post.php";
+                include_once "post.php";
 
-                    if($rating >= 80){ ?>
-                        <i class="fa fa-star fa-2xl"></i>
-                    <?php }
-                    }
-                    ?>
-
-
-                    <h5>Views: <?php $ID = 11; if( is_null(get_views($ID)) ) echo 0; else echo get_views($ID);?> </h5> <!-- TODO:ID of the post automatically set with Algorithm-->
+                $postIDs = get_20_newest_posts();
+                ?>
+                <div style="margin-top: 15%">
+                    <?php show_post($postIDs[0]); ?>
                 </div>
-            </div>
-            <br>
-            <?php include "post1.php";?>
-            <?php include "post2.php";?>
-            <?php include "post3.php";?>
-            <?php include "post4.php";?>
-            <?php include "post5.php";?>
+                <?php
+
+                for($i = 1; $i < sizeof($postIDs); $i++){
+                    ?>
+                    <div class="container">
+                        <?php show_post($postIDs[$i]); ?>
+                    </div>
+                    <?php
+                }
+                ?>
+
+
+
+
+
+
         </div>
-        <h1></h1>
 
-
-        
         <br>
         <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
         <!-- einbettung in a tag um es als link benutzen zu können-->

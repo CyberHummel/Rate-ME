@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>Welcome back</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="design.css">
   <link rel="stylesheet" type="text/css" href="../Frontend/home.css">
-</head>
+    </head>
 <body class="backround" style="height: 1000px;" >
 <?php
 // generell blackbox autocomplete m schnerller zu schreiben ~ marius
