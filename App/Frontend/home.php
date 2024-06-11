@@ -1,3 +1,16 @@
+<?php /* sollte weiter leiten i guess
+// Start der Session
+session_start();
+
+// Überprüfen, ob der Benutzer angemeldet ist
+if(!isset($_SESSION['username'])) {
+    // Weiterleitung zum index.php
+    header("Location: index.php");
+    exit(); // Beenden des Skripts, um sicherzustellen, dass die Weiterleitung ausgeführt wird
+}
+    */ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
