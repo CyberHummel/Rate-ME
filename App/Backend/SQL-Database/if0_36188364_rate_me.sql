@@ -133,11 +133,11 @@ CREATE TABLE `user` (
 
 -- Neue Test-Benutzer einfügen
 INSERT INTO `user` (`user_pre_name`, `user_sur_name`, `user_username`, `user_email`, `user_rating`, `user_password`, `user_id`, `user_join_date`) VALUES
-('Maximus', 'der Große', 'maximus', 'maximus@example.com', 0, 'pass123', 3, '2024-06-11'),
-('Anna', 'Schmidt', 'annaschmidt', 'anna.schmidt@example.com', 0, 'password456', 4, '2024-06-11'),
-('Tom', 'Meier', 'tommeier', 'tom.meier@example.com', 0, 'password789', 5, '2024-06-11'),
-('Lena', 'Müller', 'lenamueller', 'lena.mueller@example.com', 0, 'passwordabc', 6, '2024-06-11'),
-('David', 'Schulz', 'davidschulz', 'david.schulz@example.com', 0, 'passworddef', 7, '2024-06-11');
+('Maximus', 'der Große', 'maximusDerGroße', 'maximus@example.com', 0, 'pass123', 3, '2024-06-11'),
+('Anna', 'Schmidt', 'annaDasSchnidchen', 'anna.schmidt@example.com', 0, 'password456', 4, '2024-06-11'),
+('Tom', 'Meier', 'tomHatEier', 'tom.meier@example.com', 0, 'password789', 5, '2024-06-11'),
+('Lena', 'Müller', 'beiLenaMuellerts', 'lena.mueller@example.com', 0, 'passwordabc', 6, '2024-06-11'),
+('David', 'Schulz', 'davidSchulzMachtSyncro', 'david.schulz@example.com', 0, 'passworddef', 7, '2024-06-11');
 
 -- --------------------------------------------------------
 
