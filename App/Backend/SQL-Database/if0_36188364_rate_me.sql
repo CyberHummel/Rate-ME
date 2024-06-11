@@ -189,9 +189,24 @@ INSERT INTO `user_posts` (`user_id`, `post_ID`) VALUES
 (7, 10);
 
 --
--- AUTO_INCREMENT für exportierte Tabellen
+-- Tabellenstruktur für Tabelle post_likes
 --
-
+    CREATE TABLE `post_likes` (
+  `like_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `post_ID` int(11) NOT NULL,
+  `like_type` enum('like','dislike') NOT NULL,
+  PRIMARY KEY (`like_id`),
+  UNIQUE KEY `unique_like` (`user_id`,`post_ID`),
+  FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`post_ID`) REFERENCES `post`(`post_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+--
+-- für likes
+--
+    ALTER TABLE `post` 
+  ADD COLUMN `post_likes` INT NOT NULL DEFAULT 0,
+  ADD COLUMN `post_dislikes` INT NOT NULL DEFAULT 0;
 --
 -- AUTO_INCREMENT für Tabelle `post`
 --
