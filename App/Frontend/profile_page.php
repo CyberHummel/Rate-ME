@@ -14,8 +14,44 @@
 <div class="container rounded bg-light shadow mb-5 text" style="height: 100%; width: 50%;">
 
     <div class="fixed-top container" style="background-color:rgb(255,255,255,0.9)">
-        <h1 class="h1 text-center rate-me_headline">RateME</h1>
+        <h1 class="h1 text-center rate-me_headline">Welcome <?php session_start(); echo $_SESSION["user_username"]; ?></h1>
     </div>
+
+    <div class="container rounded shadow mb-3" style="margin-top: 15%">
+        <h2 class="h2 text-left">Your Rating:</h2>
+        <!--TODO: Hier die Ratings ausgeben -->
+        <?php
+        $ID = $_SESSION["user_ID"];
+
+        $rating = 100;
+        if (is_null($rating)){
+        echo 0.0;
+        }
+        else{
+        if($rating >= 20){ ?>
+        <i class="fa fa-star fa-2xl"></i>
+
+        <?php }
+                    if( $rating >= 40){ ?>
+        <i class="fa fa-star fa-2xl"></i>
+        <?php }
+        if ($rating >= 60){ ?>
+        <i class="fa fa-star fa-2xl"></i>
+        <?php }
+
+        if($rating >= 80){ ?>
+        <i class="fa fa-star fa-2xl"></i>
+        <?php }
+        }
+        ?>
+
+        <h2 class="h2 text-left">Your Posts:</h2>
+        <!--TODO: Hier die Posts ausgeben -->
+        <h2 class="h2 text-left">Your Friends:</h2>
+        <!--TODO: Hier die Friends ausgeben -->
+    </div>
+
+
 
 
 </div>

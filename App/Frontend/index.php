@@ -8,8 +8,8 @@
     </head>
 <body class="backround" style="height: 1000px;" >
 <?php
+session_start();
 // generell blackbox autocomplete m schnerller zu schreiben ~ marius
-
 
 /* feheler finden dies das 
 ini_set('display_errors', 1);
@@ -53,7 +53,10 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
   if ($stmt->fetch()) {
     // Passwortüberprüfung
     if ($password === $user_password) {
-        
+
+        $_SESSION["user_username"] = $user_username;
+        $_SESSION["user_password"] = $user_password;
+
       header("Location: home.php");
     } else {
       // Benutzername oder Passwort ungültig
@@ -68,8 +71,6 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
   $stmt->close();
   }
 }
-
-
 // Verbindung schließen
 $conn->close();
 ?>
@@ -95,6 +96,7 @@ $conn->close();
   <div class="button-container">
     <a href="../Backend/register.php" class="small-button">New Here?</a>
   </div>
+
 </div>
 </body>
 </html>

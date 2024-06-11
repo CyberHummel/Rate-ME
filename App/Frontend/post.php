@@ -47,22 +47,15 @@ function show_post($postid)
                     if ($rating >= 60){ ?>
                         <i class="fa fa-star fa-2xl"></i>
                     <?php }
-
                     if($rating >= 80){ ?>
                         <i class="fa fa-star fa-2xl"></i>
                     <?php }
                 }
                 ?>
-
-
                 <h5>Views: <?php $ID = 11; if( is_null(get_views($ID)) ) echo 0; else echo get_views($ID);?> </h5>
             </div>
         </div>
     </html>
-
-
-
-
 <?php
     }
 }

@@ -12,12 +12,22 @@
 </head>
 <body class="backround" style="height: 1000px;">
     <div class="container rounded  mb-5 text" style="height: 100%; width: 50%;">
-
         <div class="fixed-top container" style="background-color:rgb(255,255,255,0.9)">
             <h1 class="h1 text-center rate-me_headline">RateME</h1>
         </div>
 
             <?php include "get_post.php";
+                session_start();
+                $user_name = $_SESSION["user_username"];
+
+               $conn = connect_db();
+                $sql = "SELECT user_ID FROM user WHERE user_username = '$user_name'";
+                $result = mysqli_query($conn, $sql);
+
+                $row = mysqli_fetch_assoc($result);
+                $user_ID = $row["user_ID"];
+                $_SESSION["user_ID"] = $user_ID;
+
                 include_once "post.php";
 
                 $postIDs = get_20_newest_posts();
@@ -35,14 +45,7 @@
                     <?php
                 }
                 ?>
-
-
-
-
-
-
         </div>
-
         <br>
         <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
         <!-- einbettung in a tag um es als link benutzen zu können-->
@@ -52,7 +55,9 @@
             <a href="add_post.php" style="text-decoration: none; color: black;">
                 <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
             </a>
+            <a href="profile_page.php" style="text-decoration: none; color: black;">
                 <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
+            </a>
         </div>
         <br>
     </div>

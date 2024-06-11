@@ -53,6 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $street = $_POST["street"];
     $city = $_POST["city"];
 
+
+
     // Check if email is already in use // die checks sind von chat gpt :Schreibe PHP-Code der überprüft ob eine E-Mail bereits in der Datenbank verwendet wird. Falls die E-Mail bereits existiert, soll die Meldung 'Email is already in use' angezeigt werden. denke an mögliche fehlerquellen
     $stmt = $conn->prepare("SELECT user_email FROM user WHERE user_email = ?");
     $stmt->bind_param("s", $email);
