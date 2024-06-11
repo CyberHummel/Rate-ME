@@ -7,7 +7,8 @@
 </head>
 <body class="backround" style="height: 1000px;">
 
-<?php 
+<?php -
+
 // englische kommentare grundsätzlich ki kommentare ~marius
 // Basic information / könnte auch connect.php nehmen aber habe das vor der erschaffung dieser geschrieben und keine Lust jetz was kaputt zu machen, es funtkioniert also fasse ichs nicht mehr an :)
 $servername = "localhost";
@@ -84,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute
     if ($stmt->execute()) {
        // echo "Registration successful!";
-        header("Location: /App/Frontend/home.php");
+        header("Location: /App/Frontend/index.php");
     } else {
         echo "Error registering user: " . $stmt->error;
     }

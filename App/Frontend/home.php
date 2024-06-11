@@ -1,14 +1,14 @@
-<?php /* sollte weiter leiten i guess
+<?php  
 // Start der Session
 session_start();
 
 // Überprüfen, ob der Benutzer angemeldet ist
-if(!isset($_SESSION['username'])) {
+if(!isset($_SESSION['user_username'])) {
     // Weiterleitung zum index.php
     header("Location: index.php");
     exit(); // Beenden des Skripts, um sicherzustellen, dass die Weiterleitung ausgeführt wird
 }
-    */ 
+    
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,6 @@ if(!isset($_SESSION['username'])) {
         </div>
 
             <?php include "get_post.php";
-                session_start();
                 $user_name = $_SESSION["user_username"];
 
                $conn = connect_db();

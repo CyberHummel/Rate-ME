@@ -1,6 +1,11 @@
 <?php
 include_once 'get_username.php';
+echo "User ID: " . $_SESSION['user_ID'];
 
+// eroor finden yaaay
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 function show_post($postid)
 {
     if(isset($postid)){
@@ -70,8 +75,8 @@ function show_post($postid)
         <!-- daumen hoch /runter form-->
         <form action="../backend/like_post.php" method="post">
             <input type="hidden" name="post_id" value="<?php echo $postid; ?>">
-            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>"> <!-- session muss nochmal geprüft werden lol -->
-            <button type="submit" name="like_type" value="like"><i class="fas fa-thumbs-up fa-2x"></i></button>
+            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_ID']; ?>">
+            <button type="submit" name="like_type" value="like"><i class="fas fa-thumbs-up fa-2x"> </i></button>
             <button type="submit" name="like_type" value="dislike"><i class="fas fa-thumbs-down fa-2x"></i></button>
         </form>
         <h5>Views: <?php $ID = 11; if( is_null(get_views($ID)) ) echo 0; else echo get_views($ID);?> </h5>

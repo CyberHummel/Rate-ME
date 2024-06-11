@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once '../Frontend/connect.php';
 
 // Überprüfen, ob die Daten vom Formular gesendet wurden
@@ -52,15 +53,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Schließen Sie die Verbindungen
+
+        // checken das nichts was noch nicht "initialisiert" wurde
         $check_stmt->close();
-        $update_stmt->close();
-        $insert_stmt->close();
-        $update_likes_stmt->close();
-        $update_dislikes_stmt->close();
+        if (isset($update_stmt)) {
+            $update_stmt->close();
+        }
+        if (isset($insert_stmt)) {
+            $insert_stmt->close();
+        }
+        if (isset($update_likes_stmt)) {
+            $update_likes_stmt->close();
+        }
+        if (isset($update_dislikes_stmt)) {
+            $update_dislikes_stmt->close();
+        }
         $conn->close();
 
         // Weiterleitung zur home.php-Seite
-        header("Location: home.php");
+        header("Location: ../Frontend/home.php");
         exit; // Beenden des Skripts nach der Weiterleitung, um sicherzustellen, dass keine weiteren Inhalte gesendet werden
     } else {
         // Fehlermeldung, wenn nicht alle erforderlichen Felder gesetzt sind
