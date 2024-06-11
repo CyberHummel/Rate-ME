@@ -63,8 +63,10 @@
         </div>
         <h2 class="h2 text-left">Your Friends:</h2>
         <!--TODO: Hier die Friends ausgeben -->
-        <div class="container rounded shadow mb-3">
-            <h4 class="feature-message" style="color: #007bff">Feature coming soon</h4>
+
+        <div class="container rounded shadow mb-3 row">
+            <h4 class="feature-message" style="color: #007bff">Feature coming soon or you dont have any :(   </h4>
+            <div class="tenor-gif-embed ml-2"  data-postid="16353173" data-share-method="host" data-aspect-ratio="1" data-width="5%"><a href="https://tenor.com/view/bang-my-head-irritated-oh-no-no-way-problematic-gif-16353173">Bang My Head Irritated Sticker</a>from <a href="https://tenor.com/search/bang+my+head-stickers">Bang My Head Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
         </div>
         <h2 class="h2 text-left">Your Posts:</h2>
         <div class="row">
@@ -80,6 +82,20 @@
             <div class="col">
                 <?php if(sizeof($postIDs) > 3){ show_post($postIDs[3]);} ?>
             </div>
+        </div>
+
+
+        <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
+            <!-- einbettung in a tag um es als link benutzen zu können-->
+            <a href="friends.php" style="text-decoration: none; color: black;">
+                <i class="fa-solid fa-user-group fa-2xl" style="margin-right: 1%; vertical-align: bottom;"></i>
+            </a>
+            <a href="add_post.php" style="text-decoration: none; color: black;">
+                <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
+            </a>
+            <a href="home.php" style="text-decoration: none; color: black;">
+                <i class="fa-solid fa-share fa-2xl" style="vertical-align: bottom;"></i>
+            </a>
         </div>
 
     </div>

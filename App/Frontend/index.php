@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="design.css">
   <link rel="stylesheet" type="text/css" href="../Frontend/home.css">
     </head>
-<body class="backround" style="height: 1000px;" >
+<body class="backround">
 <?php
 session_start();
 // generell blackbox autocomplete m schnerller zu schreiben ~ marius
@@ -76,27 +76,26 @@ $conn->close();
 ?>
     
  <!-- headline banner -->
- <div class="fixed-top container" style="background-color:rgba(255,255,255,0.9)">
+ <div class="fixed-top container rounded" style="background-color:rgba(255,255,255,0.9)">
         <h1 class="h1 text-center rate-me_headline">RateME</h1>
     </div>
     
-<div id="central_panel">
-  <div id="header">
-    <h1>Sign in</h1>
-
+<div id="central_panel" class="rounded container">
+  <div class="container text-left rounded">
+    <h1 style="margin-top: 25%">Sign in</h1>
+      <br>
   </div>
   <!-- Anmeldeformular -->
-  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="margin-left: 8%;">
     <label for="username">Username:</label>
     <input id="username" name="username" required type="text" />
+      <br>
     <label for="password">Password:</label>
     <input id="password" name="password" required type="password" />
     <!-- wennn das hier gedrückt wird passiert nichts --> 
-    <input name="login" type="submit" value="Login"  />
-  </b>
-  <div class="button-container">
-    <a href="../Backend/register.php" class="small-button">New Here?</a>
-  </div>
+    <input name="login" type="submit" value="Login" class="button button-primary rounded" style="margin-left: 10%; color: #007bff; border-width: 0; background-color: rgb(253,253,253)"/>
+  </form>
+
 
 </div>
 </body>
