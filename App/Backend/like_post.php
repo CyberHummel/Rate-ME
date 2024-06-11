@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once '../Frontend/connect.php';
+include_once '../Frontend/get_post.php';
 
 // Überprüfen, ob die Daten vom Formular gesendet wurden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,22 +25,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $check_stmt->bind_param("ii", $post_id, $user_id);
         $check_stmt->execute();
         $result = $check_stmt->get_result();
-        
+
         if ($result->num_rows > 0) {
-            // Falls der Benutzer bereits geliked oder disliket hat, aktualisieren wir den Like-Typ
-            $update_sql = "UPDATE post_likes SET like_type = ? WHERE post_ID = ? AND user_id = ?";
-            $update_stmt = $conn->prepare($update_sql);
-            $update_stmt->bind_param("sii", $like_type, $post_id, $user_id);
-            $update_stmt->execute();
-        } else {
-            // Falls der Benutzer noch nicht geliked oder disliket hat, fügen wir einen neuen Eintrag hinzu
-            $insert_sql = "INSERT INTO post_likes (user_id, post_ID, like_type) VALUES (?, ?, ?)";
-            $insert_stmt = $conn->prepare($insert_sql);
-            $insert_stmt->bind_param("iis", $user_id, $post_id, $like_type);
-            $insert_stmt->execute();
+            // Falls der Benutzer bereits geliked oder disliket hat, eine Fehlermeldung ausgeben und die Weiterleitung durchführen
+            echo "<script>alert('Error: You have already liked or disliked this post'); window.location.href = '../Frontend/home.php';</script>";
+            exit;
         }
 
-        // Aktualisieren Sie die Anzahl der Likes und Dislikes in der  "Post"Table
+        // Überprüfen, ob der Benutzer seinen eigenen Post liken/disliken möchte
+        if (!check_user_post_ID($user_id, $post_id)) {
+            echo "<script>alert('Error: You cannot like or dislike your own post'); window.location.href = '../Frontend/home.php';</script>";
+            exit;
+        }
+
+        // Falls der Benutzer noch nicht geliked oder disliket hat, fügen wir einen neuen Eintrag hinzu
+        $insert_sql = "INSERT INTO post_likes (user_id, post_ID, like_type) VALUES (?, ?, ?)";
+        $insert_stmt = $conn->prepare($insert_sql);
+        $insert_stmt->bind_param("iis", $user_id, $post_id, $like_type);
+        $insert_stmt->execute();
+
+        // Aktualisieren Sie die Anzahl der Likes und Dislikes im Post
+        $reset_likes_dislikes_sql = "UPDATE post SET post_likes = (SELECT COUNT(*) FROM post_likes WHERE post_ID = ? AND like_type = 'like'), post_dislikes = (SELECT COUNT(*) FROM post_likes WHERE post_ID = ? AND like_type = 'dislike') WHERE post_ID = ?";
+        $reset_likes_dislikes_stmt = $conn->prepare($reset_likes_dislikes_sql);
+        $reset_likes_dislikes_stmt->bind_param("iii", $post_id, $post_id, $post_id);
+        $reset_likes_dislikes_stmt->execute();
+
+        // Likes und Dislikes basierend auf der neuen Aktion aktualisieren
         if ($like_type == 'like') {
             $update_likes_sql = "UPDATE post SET post_likes = post_likes + 1 WHERE post_ID = ?";
             $update_likes_stmt = $conn->prepare($update_likes_sql);
@@ -53,15 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Schließen Sie die Verbindungen
-
-        // checken das nichts was noch nicht "initialisiert" wurde
         $check_stmt->close();
-        if (isset($update_stmt)) {
-            $update_stmt->close();
-        }
-        if (isset($insert_stmt)) {
-            $insert_stmt->close();
-        }
+        $insert_stmt->close();
+        $reset_likes_dislikes_stmt->close();
         if (isset($update_likes_stmt)) {
             $update_likes_stmt->close();
         }
@@ -70,12 +75,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         $conn->close();
 
-        // Weiterleitung zur home.php-Seite
+        // Weiterleitung zur Startseite oder zur vorherigen Seite
         header("Location: ../Frontend/home.php");
-        exit; // Beenden des Skripts nach der Weiterleitung, um sicherzustellen, dass keine weiteren Inhalte gesendet werden
+        exit;
     } else {
         // Fehlermeldung, wenn nicht alle erforderlichen Felder gesetzt sind
-        echo "Error: Not all required fields are set";
+        echo "<script>alert('Error: Not all required fields are set'); window.location.href = '../Frontend/home.php';</script>";
+        exit;
     }
 }
 ?>
