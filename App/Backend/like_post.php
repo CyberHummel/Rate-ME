@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $insert_stmt->execute();
         }
 
-        // Aktualisieren Sie die Anzahl der Likes und Dislikes im Post
+        // Aktualisieren Sie die Anzahl der Likes und Dislikes in der  "Post"Table
         if ($like_type == 'like') {
             $update_likes_sql = "UPDATE post SET post_likes = post_likes + 1 WHERE post_ID = ?";
             $update_likes_stmt = $conn->prepare($update_likes_sql);
