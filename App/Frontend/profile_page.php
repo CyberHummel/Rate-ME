@@ -93,8 +93,8 @@
             <a href="add_post.php" style="text-decoration: none; color: black;">
                 <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
             </a>
-            <a href="profile_page.php" style="text-decoration: none; color: black;">
-                <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
+            <a href="home.php" style="text-decoration: none; color: black;">
+                <i class="fa-solid fa-share fa-2xl" style="vertical-align: bottom;"></i>
             </a>
         </div>
 
