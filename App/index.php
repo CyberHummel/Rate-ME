@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="design.css">
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
-<body class="backround text-center" style="height: 100px">
+<body class="gradient-background text-center" style="height: 100px">
 <?php
 session_start();
 // generell blackbox autocomplete m schnerller zu schreiben ~ marius
@@ -70,7 +70,7 @@ $conn->close();
 <!-- headline banner -->
 
 
-<div id="central_panel" class="rounded container align-self-center shadow">
+<div id="central_panel" class=" container align-self-center shadow round">
     <div class="container text-left rounded mt-xl-3">
         <h1 class="rate-me_headline text-center" style="background-color: white">Rate ME</h1>
         <h3 class="mt-xl-2" style="">Sign in</h3>
@@ -79,20 +79,21 @@ $conn->close();
     <!-- Anmeldeformular -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="margin-left: 8%;">
         <div class="row rounded shadow">
-            <div class="rounded shadow">
+            <div class="rounded">
                 <label for="username">Username:</label>
-                <input id="username" name="username" required type="text" class="shadow rounded" style="border-width: 0; background-color: rgba(255,78,153,0.62)"/>
+                <input id="username" name="username" required type="text" class="shadow rounded login-field"/>
             </div>
             <br>
             <div class="rounded shadow">
                 <label for="password">Password: </label>
-                <input id="password" name="password" required type="password" class="shadow rounded" style="border-width: 0; background-color: rgba(255,78,153,0.62)"/>
+                <input id="password" name="password" required type="password" class="shadow rounded login-field" />
             </div>
 
         </div>
+        <div class="container text-left">
+            <input name="login" type="submit" value="Login" class="button rounded shadow mt-2 btn login-btn" style="border-width: 0; width: 100%;/>
+        </div>
 
-        <input name="login" type="submit" value="Login" class="button rounded"
-               style="border-width: 0"     />
 
 
         <!-- wennn das hier gedrückt wird passiert nichts -->
