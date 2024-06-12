@@ -50,10 +50,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    $image = $_FILES["image"];
+    $image_blob = addslashes(file_get_contents($image["tmp_name"]));
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO user (user_pre_name, user_sur_name, user_username, user_email, user_password, user_rating, user_join_date) VALUES (?, ?, ?, ?, ?, 0, CURRENT_DATE())");
     $stmt->bind_param("sssss", $pre_name, $sur_name, $username, $email, $password);
 
+    // Set image
+    $stmt->send_long_data(5, $image_blob);
     // Execute
     if ($stmt->execute()) {
         header("Location: index.php");
@@ -63,6 +67,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Close statement
     $stmt->close();
+    //Maximus insert Profile Picture
+    $sql = "UPDATE user SET user_profile_picture = '$image_blob' WHERE user_username = '$username'";
+    $result = mysqli_query($conn, $sql);
 }
 
 // Close connection
@@ -76,7 +83,7 @@ $conn->close();
 <!-- Sign Up Form / blackbox half mit-->
 <div id="central_panel">
     <h1>Sign Up</h1>
-    <form action="register.php" method="post">
+    <form action="register.php" method="post" enctype="multipart/form-data">
         <label for="pre_name">First Name:</label>
         <input id="pre_name" name="pre_name" required="" type="text"/>
         <label for="sur_name">Last Name:</label>
@@ -91,6 +98,9 @@ $conn->close();
         <input id="street" name="street" type="text"/>
         <label for="city">City and Postal Code:</label>
         <input id="city" name="city" type="text"/>
+
+        <label for="image">Upload Image:</label><br>
+        <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow" accept="image/png, image/jpeg" required><br><br>
         <input name="register" type="submit" value="Register"/>
     </form>
     <div class="button-container">

@@ -94,7 +94,6 @@
             </div>
         </div>
 
-
         <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
             <!-- einbettung in a tag um es als link benutzen zu können-->
             <a href="friends.php" style="text-decoration: none; color: black;">

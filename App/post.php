@@ -64,7 +64,7 @@ function show_post($postid, $show_RatingButtons)
             <div class="text-center round container shadow">
                 <br>
                 <?php
-                if(get_image($postid) !== null){
+                if(get_image($postid) !== null){//Maximus
                     echo '<img src="data:image/jpeg;base64,'.base64_encode(get_image($postid)).'" style="width: 300px;"/ alt="No image found">';
                 }
                 ?>
@@ -73,7 +73,7 @@ function show_post($postid, $show_RatingButtons)
                 <div class="text-left row mt-4">
                     <i class="fa fa-commenting-o fa-2xl ml-4"></i>
                     <?php
-                    // entworden von maximus , dynamik mit db von marius
+                    // entworfen von maximus , dynamik mit db von marius und bissle maximus
                     $ID = $postid;
                     $rating = get_rating($ID);
 
