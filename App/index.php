@@ -4,8 +4,8 @@
     <title>Welcome back</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="Stylesheets/design.css">
-    <link rel="stylesheet" type="text/css" href="Stylesheets/home.css">
+    <link rel="stylesheet" type="text/css" href="design.css">
+    <link rel="stylesheet" type="text/css" href="../Frontend/home.css">
 </head>
 <body class="backround">
 <?php
@@ -25,6 +25,7 @@ function validateInput($input)
 }
 
 include "connect.php";
+$conn=connect_db();
 
 // isset überprüft ob die methode tatsächlich exitiert bevor ich sie dann aufrufe
 if (isset($_SERVER['REQUEST_METHOD'])) {
@@ -34,7 +35,7 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
         $username = validateInput($_POST["username"]);
         $password = validateInput($_POST["password"]);
 
-        $conn = connect_db();
+
         $stmt = $conn->prepare("SELECT user_id, user_username, user_password FROM user WHERE user_username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
@@ -88,7 +89,7 @@ $conn->close();
                style="margin-left: 15%; color: #007bff; border-width: 0; background-color: rgb(253,253,253)"/>
     </form>
     <div class="button-container">
-        <a href="register.php" class="small-button">Want to join Community?</a>
+        <a href="../Backend/register.php" class="small-button">Want to join Community?</a>
     </div>
 
 
