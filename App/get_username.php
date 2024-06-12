@@ -30,4 +30,19 @@ function getPostCreator($postid)
     return $user_username;
 }
 
+function getUserImage($user_name)
+{
+    $conn = connect_db(); // Establish database connection
+
+    // Check if the connection is successful
+    if ($conn === false) {
+        die("Error: Could not connect to the database");
+    }
+
+    $sql = "SELECT user_profile_picture FROM user WHERE user_username = '$user_name'";
+    $result = mysqli_query($conn, $sql);
+    $user_image = mysqli_fetch_assoc($result)['user_profile_picture'];
+    return $user_image;
+}
+
 

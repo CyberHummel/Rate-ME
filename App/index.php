@@ -93,11 +93,6 @@ $conn->close();
         <div class="container text-left">
             <input name="login" type="submit" value="Login" class="button rounded shadow mt-2 btn login-btn" style="border-width: 0; width: 100%;/>
         </div>
-
-
-
-        <!-- wennn das hier gedrückt wird passiert nichts -->
-
     </form>
     <div class="button-container">
         <a href="register.php" class="mb-lg-5 mt-2">Want to join Community?</a>

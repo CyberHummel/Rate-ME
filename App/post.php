@@ -14,6 +14,11 @@ function show_post($postid, $show_RatingButtons)
             <h5><?php echo get_Headline($postid); ?></h5>
             <div class="rounded shadow mb-8">
                 <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2">
+                <?php
+                if(get_image($postid) !== null){//Maximus
+                    echo '<img src="data:image/jpeg;base64,'.base64_encode(getUserImage(getPostCreator($postid))).'" class="profile-pic ml-2 mt-2" style="width: 50px;"/ alt="No image found">';
+                }
+                ?>
                 <h6 class="ml-2">
                     <?php
                     $username = getPostCreator($postid);
@@ -64,7 +69,7 @@ function show_post($postid, $show_RatingButtons)
             <div class="text-center round container shadow">
                 <br>
                 <?php
-                if(get_image($postid) !== null){
+                if(get_image($postid) !== null){//Maximus
                     echo '<img src="data:image/jpeg;base64,'.base64_encode(get_image($postid)).'" style="width: 300px;"/ alt="No image found">';
                 }
                 ?>
@@ -73,7 +78,7 @@ function show_post($postid, $show_RatingButtons)
                 <div class="text-left row mt-4">
                     <i class="fa fa-commenting-o fa-2xl ml-4"></i>
                     <?php
-                    // entworden von maximus , dynamik mit db von marius
+                    // entworfen von maximus , dynamik mit db von marius und bissle maximus
                     $ID = $postid;
                     $rating = get_rating($ID);
 
