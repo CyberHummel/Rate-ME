@@ -18,9 +18,9 @@ function connect_db()
 /* website
 function connect_db()
 {
-    $sname = "sql212.infinityfree.com";
-    $unmae = "if0_36718971";
-    $password = "reiuogaVX7j7";
+    $sname = "***************";
+    $unmae = "*************";
+    $password = "***********";
     $db_name = "if0_36718971_rate_me";
     $conn = mysqli_connect($sname, $unmae, $password, $db_name);
     if ($conn) {
