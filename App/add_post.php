@@ -17,7 +17,7 @@
 <div class="container rounded shadow mb-3 bg-light text" style="height: 100%; width: 50%;">
     <h1>Create new RateME Post</h1>
     <div class="container rounded shadow mb-4 bg-light">
-        <form action="Backend/SQL-Database/create_post.php" method="POST">
+        <form action="Backend/create_post.php" method="POST">
             <label for="Healdline">Headline:</label><br>
             <input type="text" id="Healdline" name="Healdline"><br><br>
 
