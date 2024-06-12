@@ -1,11 +1,12 @@
-<?php
+<?php //Marius
 //like_post.php
 session_start();
 include_once 'connect.php';
 include_once 'get_post.php';
 
 // Function to calculate weighted points
-function calculate_weighted_points($base_points, $user_rating) {
+function calculate_weighted_points($base_points, $user_rating)
+{
     // Normalize the user rating to a value between 0.5 and 1.5
     $weight = max(0.5, min(1.5, $user_rating / 100 + 0.5));
     return round($base_points * $weight);

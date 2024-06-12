@@ -1,3 +1,6 @@
+/* Everything here and the whole design of the webiste/s is written by Maximus */
+
+
 .backround {
     background: rgb(255, 182, 255);
     background: radial-gradient(circle, rgba(255, 182, 255, 1) 33%, rgba(255, 0, 109, 1) 100%);
@@ -28,7 +31,7 @@
     min-height: 100%;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -38,10 +41,9 @@ html{
 }
 
 
-
-.login-btn{
+.login-btn {
     color: white;
-    background: linear-gradient(261deg,darkviolet,#d61db3,#be8bb5);
+    background: linear-gradient(261deg, darkviolet, #d61db3, #be8bb5);
     background-size: 180% 180%;
     animation: login-btn 24s ease infinite;
 }
@@ -58,34 +60,32 @@ html{
     }
 }
 
-.login-btn:hover{
+.login-btn:hover {
     background: linear-gradient(0deg, rgba(148, 0, 211, 0.34), rgba(214, 29, 179, 0.41), rgba(190, 139, 181, 0.66));
     background-size: 180% 180%;
     animation: login-btn 24s ease infinite;
 }
 
-.login-field{
+.login-field {
     background-color: rgba(214, 29, 179, 0.56);
     color: white;
     border: none;
 }
 
-.login-field:hover{
-    background: linear-gradient(0deg, rgba(148, 0, 211, 0.59),#d61db3,#be8bb5);
+.login-field:hover {
+    background: linear-gradient(0deg, rgba(148, 0, 211, 0.59), #d61db3, #be8bb5);
     background-size: 180% 180%;
     animation: login-btn 24s ease infinite;
 }
 
 .round {
-    border-radius:12px;
+    border-radius: 12px;
 }
 
-
 .gradient-background {
-    background: linear-gradient(268deg,darkviolet,#fc16d7,#ff07aa);
+    background: linear-gradient(268deg, rgba(148, 0, 211, 0.82), rgba(252, 22, 215, 0.72), rgba(255, 7, 170, 0.75));
     background-size: 180% 180%;
     animation: gradient-animation 6s ease infinite;
-
 }
 
 @keyframes gradient-animation {
@@ -100,14 +100,13 @@ html{
     }
 }
 
-.striped-background{
-    background-color: #e5e5f7;
-    opacity: 0.0;
-    background: repeating-linear-gradient( -45deg, #8f00ff, #8f00ff 20px, #e5e5f7 20px, #e5e5f7 100px );
-}
 
-button:hover{
+button:hover {
     background: linear-gradient(0deg, rgba(148, 0, 211, 0.25), rgba(214, 29, 179, 0.25), rgba(190, 139, 181, 0.31));
     background-size: 180% 180%;
     animation: login-btn 24s ease infinite;
 }
+
+
+
+

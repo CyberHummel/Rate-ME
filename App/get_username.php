@@ -30,6 +30,7 @@ function getPostCreator($postid)
     return $user_username;
 }
 
+//Maximus
 function getUserImage($user_name)
 {
     $conn = connect_db(); // Establish database connection

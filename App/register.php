@@ -4,7 +4,8 @@
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="design.css">
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
@@ -13,7 +14,7 @@
 <?php
 
 include "connect.php";
-$conn=connect_db();
+$conn = connect_db();
 
 // Check connection
 if ($conn->connect_error) {
@@ -109,7 +110,8 @@ $conn->close();
         <br>
         <br>
         <label for="image">Upload Profile Picture:</label><br><!--Maximus-->
-        <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow" accept="image/png, image/jpeg" required><br><br>
+        <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow"
+               accept="image/jpeg" required><br><br>
         <input name="register" type="submit" value="Register" class="button round shadow mt-2 btn login-btn"/>
     </form>
     <div class="button-container">
