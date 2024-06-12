@@ -12,14 +12,22 @@ function get_post($post_id) //Aus Maximus´s und Marius´s Gehirn
 
     if ($result && mysqli_num_rows($result) > 0) {
         $post = mysqli_fetch_assoc($result);
-        $views = $post['post_views'];
+        $views = $post['post_views'] + 1; // Inkrementiere den viewscount
         $date = $post['post_date'];
         $rating = $post['post_rating'];
+
+        // Aktualisiere die Datenbank mit dem neuen views count
+        $sql_update = "UPDATE post SET post_views = ? WHERE post_id = ?";
+        $stmt_update = mysqli_prepare($conn, $sql_update);
+        mysqli_stmt_bind_param($stmt_update, "ii", $views, $post_id);
+        mysqli_stmt_execute($stmt_update);
+
         return array($views, $rating, $date);
     } else {
         return array(0, 0, ''); // Wenn kein Ergebnis gefunden wird, gib Standardwerte zurück
     }
 }
+
 
 function get_post_content($post_id)//Aus Maximus´s und Marius´s Gehirn
 {

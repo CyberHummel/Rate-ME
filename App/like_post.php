@@ -1,5 +1,5 @@
 <?php
-
+//like_post.php
 session_start();
 include_once 'connect.php';
 include_once 'get_post.php';
