@@ -61,7 +61,7 @@ function show_post($postid, $show_RatingButtons)
             </div>
 
             <br>
-            <div class="text-center rounded container shadow">
+            <div class="text-center round container shadow">
                 <br>
                 <img src="https://picsum.photos/200" alt="">
                 <p style="text-align: left;" class="mt-2"><?php echo get_description($postid); ?></p>

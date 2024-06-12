@@ -24,11 +24,11 @@ if(!isset($_SESSION['user_username'])) {
     <script src="https://kit.fontawesome.com/c5f3357375.js" crossorigin="anonymous"></script>
 
 </head>
-<body class="backround" style="height: 1000px;">
+<body class="gradient-background" >
 <!--TODO: <video autoplay muted loop id="backround-video"> <source></video> -->
     <div class="container rounded  mb-5 text content" style="height: 100%; width: 50%;">
-        <div class="fixed-top container rounded" style="background-color:rgb(255,255,255,0.9); width: 50%">
-            <h1 class="h1 text-center rate-me_headline rounded">RateME</h1>
+        <div class="fixed-top container round" style="background-color:rgb(255,255,255,0.9); width: 50%">
+            <h1 class="h1 text-center rate-me_headline round">RateME</h1>
         </div>
             <?php include "get_post.php";
                 $user_name = $_SESSION["user_username"];
@@ -52,7 +52,7 @@ if(!isset($_SESSION['user_username'])) {
 
                 for($i = 1; $i < sizeof($postIDs); $i++){
                     ?>
-                    <div class="container">
+                    <div class="container round">
                         <?php show_post($postIDs[$i], true); ?>
                     </div>
                     <?php

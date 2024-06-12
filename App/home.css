@@ -75,14 +75,14 @@ html{
 }
 
 .round {
-    border-radius:15px;
+    border-radius:12px;
 }
 
 
 .gradient-background {
     background: linear-gradient(268deg,darkviolet,#fc16d7,#ff07aa);
     background-size: 180% 180%;
-    animation: gradient-animation 24s ease infinite;
+    animation: gradient-animation 6s ease infinite;
 }
 
 @keyframes gradient-animation {

@@ -90,9 +90,9 @@ $conn->close();
         }
     </style>
 </head>
-<body class="backround" style="height: 1000px;">
-<div class="container rounded bg-light shadow mb-5 text" style="height: 100%; width: 50%;">
-    <div class="fixed-top container" style="background-color:rgb(255,255,255,0.9)">
+<body class="gradient-background" style="height: 1000px;">
+<div class="container round bg-light shadow mb-5 text" style="height: 100%; width: 50%;">
+    <div class="fixed-top container round" style="background-color:rgb(255,255,255,0.9)">
         <h1 class="h1 text-center rate-me_headline">RateME</h1>
     </div>
     <div class="container rounded shadow mb-3">
