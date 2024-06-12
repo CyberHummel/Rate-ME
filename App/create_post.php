@@ -2,6 +2,7 @@
 include "connect.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
     $headline = $_POST["Healdline"];
     $description = $_POST["Description"];
 
@@ -34,6 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "INSERT INTO post_IDS (post_ID, post_content_ID) VALUES ('$post_ID', '$post_content_ID')";
     $result = mysqli_query($conn, $sql);
+
+    $user_ID = $_SESSION['user_ID'];
+    $sql = "INSERT INTO user_posts (user_ID, post_ID) VALUES ($user_ID, '$post_ID')";
+
+    $result = mysqli_query($conn, $sql);
+
     $conn->close();
 
     header("Location: home.php");

@@ -17,8 +17,10 @@ function show_post($postid) //Maximus
                 <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2">
                 <h6 class="ml-2">
                     <?php
+                    echo $postid;
                     $username = getPostCreator($postid);
-                    echo htmlspecialchars($username);
+                    echo $username;
+
                     ?>
                 </h6> <!--TODO: Get Post Creator/User-->
                 <i class="fa fa-star fa-2xl ml-2"></i>
