@@ -24,7 +24,7 @@ function validateInput($input)
     return filter_var($input, FILTER_SANITIZE_STRING);
 }
 
-include "connect.php";
+include "./Backend/connect.php";
 $conn=connect_db();
 
 // isset überprüft ob die methode tatsächlich exitiert bevor ich sie dann aufrufe

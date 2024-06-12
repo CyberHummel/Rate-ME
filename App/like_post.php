@@ -30,13 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             // Falls der Benutzer bereits geliked oder disliket hat, eine Fehlermeldung ausgeben und die Weiterleitung durchführen
-            echo "<script>alert('Error: You have already liked or disliked this post'); window.location.href = '../home.php';</script>";
+            echo "<script>alert('Error: You have already liked or disliked this post'); window.location.href = 'home.php';</script>";
             exit;
         }
 
         // Überprüfen, ob der Benutzer seinen eigenen Post liken/disliken möchte
         if (!check_user_post_ID($user_id, $post_id)) {
-            echo "<script>alert('Error: You cannot like or dislike your own post'); window.location.href = '../home.php';</script>";
+            echo "<script>alert('Error: You cannot like or dislike your own post'); window.location.href = 'home.php';</script>";
             exit;
         }
 
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     } else {
         // Fehlermeldung, wenn nicht alle erforderlichen Felder gesetzt sind
-        echo "<script>alert('Error: Not all required fields are set'); window.location.href = '../home.php';</script>";
+        echo "<script>alert('Error: Not all required fields are set'); window.location.href = 'home.php';</script>";
         exit;
     }
 }

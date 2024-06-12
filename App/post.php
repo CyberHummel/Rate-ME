@@ -67,7 +67,7 @@ function show_post($postid) //Maximus
                     }
                     ?>
                     <!-- daumen hoch /runter form Marius-->
-                    <form action="Backend/like_post.php" method="post">
+                    <form action="like_post.php" method="post">
                         <input type="hidden" name="post_id" value="<?php echo $postid; ?>">
                         <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_ID']; ?>">
                         <button type="submit" name="like_type" value="like"><i class="fas fa-thumbs-up fa-2x"> </i>

@@ -4,8 +4,8 @@
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="Stylesheets/design.css">
-    <link rel="stylesheet" type="text/css" href="Stylesheets/home.css">
+    <link rel="stylesheet" type="text/css" href="design.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 <body class="backround" style="height: 1000px;">
 

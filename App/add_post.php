@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create RateME Post</title>
-    <link rel="stylesheet" href="Stylesheets/home.css">
+    <link rel="stylesheet" href="home.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
@@ -17,7 +17,7 @@
 <div class="container rounded shadow mb-3 bg-light text" style="height: 100%; width: 50%;">
     <h1>Create new RateME Post</h1>
     <div class="container rounded shadow mb-4 bg-light">
-        <form action="Backend/create_post.php" method="POST">
+        <form action="create_post.php" method="POST">
             <label for="Healdline">Headline:</label><br>
             <input type="text" id="Healdline" name="Healdline"><br><br>
 
