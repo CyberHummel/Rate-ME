@@ -68,6 +68,7 @@ function show_post($postid, $show_RatingButtons)
                 <div class="text-left row mt-4">
                     <i class="fa fa-commenting-o fa-2xl ml-4"></i>
                     <?php
+                    // entworden von maximus , dynamik mit db von marius
                     $ID = $postid;
                     $rating = get_rating($ID);
 
