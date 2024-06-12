@@ -19,13 +19,13 @@
     <div class="container rounded shadow mb-4 bg-light">
         <form action="create_post.php" method="POST">
             <label for="Healdline">Headline:</label><br>
-            <input type="text" id="Healdline" name="Healdline"><br><br>
+            <input type="text" id="Healdline" name="Healdline" style="border-width: 0" class="shadow"><br><br>
 
             <label for="Description">Description:</label><br>
-            <textarea id="Description" name="Description" rows="4" cols="50"></textarea><br><br>
+            <textarea id="Description" name="Description" rows="4" cols="50" style="border-width: 0" class="shadow"></textarea><br><br>
 
             <label for="image">Upload Image:</label><br>
-            <input type="file" id="image" name="image" class="btn btn-dark"><br><br>
+            <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow"><br><br>
 
 
             <input type="submit" value="Create Post" class="btn btn-dark mb-4">
@@ -39,13 +39,13 @@
      style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
     <!-- einbettung in a tag um es als link benutzen zu können-->
     <a href="friends.php" style="text-decoration: none; color: black;">
-        <i class="fa-solid fa-user-group fa-2xl" style="margin-right: 1%; vertical-align: bottom;"></i>
+        <i class="fa-solid fa-user-group fa-2xl icon" style="margin-right: 1%; vertical-align: bottom;"></i>
     </a>
     <a href="home.php" style="text-decoration: none; color: black;">
-        <i class="fa-solid fa-share fa-2xl" style="vertical-align: bottom;"></i>
+        <i class="fa-solid fa-share fa-2xl icon" style="vertical-align: bottom;"></i>
     </a>
     <a href="profile_page.php" style="text-decoration: none; color: black;">
-        <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
+        <i class="fa-solid fa-bars fa-2xl icon" style="vertical-align: bottom;"></i>
     </a>
 </div>
 

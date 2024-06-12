@@ -17,7 +17,7 @@ function show_post($postid) //Maximus
                 <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2">
                 <h6 class="ml-2">
                     <?php
-                    echo $postid;
+
                     $username = getPostCreator($postid);
                     echo $username;
 
