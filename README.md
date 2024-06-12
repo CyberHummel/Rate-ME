@@ -13,9 +13,9 @@ hei:)
 4. http://katzenpension.infinityfreeapp.com (Danke Timon für die Background CSS Idee)
 
 ## What is it about?
-German:
+German: \n
 RateMe ist eine Full-Stack-Webanwendung, die es Benutzern ermöglicht, Beiträge zu veröffentlichen, zu liken und mit anderen zu interagieren. Deine Aktivität trägt zu einer persönlichen "Bewertung" bei, die deine soziale Beeinflussung vorhersagt.
-Englisch:
+Englisch:?\n
 RateMe is a full-stack web application that allows users to post, like, and interact with others. Your activity contributes to a personal "rating" that predicts your social influence.
 
 ## How does Rate-Me work?
