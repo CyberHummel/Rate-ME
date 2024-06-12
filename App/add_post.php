@@ -13,16 +13,16 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/c5f3357375.js" crossorigin="anonymous"></script>
 </head>
-<body class="backround" style="height: 500px;">
+<body class="gradient-background" style="height: 500px;">
 <div class="container rounded shadow mb-3 bg-light text" style="height: 100%; width: 50%;">
     <h1 class="mt-3">Create new RateME Post</h1>
     <div class="container rounded shadow mb-4 bg-light">
         <form action="create_post.php" method="POST">
             <label for="Healdline">Headline:</label><br>
-            <input type="text" id="Healdline" name="Healdline" style="border-width: 0" class="shadow"><br><br>
+            <input type="text" id="Healdline" name="Healdline" style="border-width: 0" class="shadow login-field"><br><br>
 
             <label for="Description">Description:</label><br>
-            <textarea id="Description" name="Description" rows="4" cols="50" style="border-width: 0" class="shadow"></textarea><br><br>
+            <textarea id="Description" name="Description" rows="4" cols="50" style="border-width: 0" class="shadow login-field"></textarea><br><br>
 
             <label for="image">Upload Image:</label><br>
             <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow"><br><br>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/c5f3357375.js" crossorigin="anonymous"></script>
 </head>
-<body class="backround" style="height: 1000px;">
+<body class="gradient-background" ">
 <div class="container rounded bg-light shadow mb-5 text" style="height: 100%; width: 50%;">
 
     <div class="container" style="background-color:rgb(255,255,255,0.9)">
