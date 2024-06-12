@@ -27,7 +27,7 @@
 
             <label for="image">Upload Image:</label><br>
             <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow"
-                   accept="image/png, image/jpeg"><br><br>
+                   accept="image/jpeg"><br><br>
 
             <input type="submit" value="Create Post" class="btn btn-dark mb-4">
         </form>

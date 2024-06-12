@@ -111,7 +111,7 @@ $conn->close();
         <br>
         <label for="image">Upload Profile Picture:</label><br><!--Maximus-->
         <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow"
-               accept="image/png, image/jpeg" required><br><br>
+               accept="image/jpeg" required><br><br>
         <input name="register" type="submit" value="Register" class="button round shadow mt-2 btn login-btn"/>
     </form>
     <div class="button-container">
