@@ -7,7 +7,7 @@ include_once 'get_username.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-function show_post($postid) //Maximus
+function show_post($postid, $show_RatingButtons) //Maximus
 {
     if (isset($postid)) {
         ?>
@@ -17,7 +17,7 @@ function show_post($postid) //Maximus
                 <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2">
                 <h6 class="ml-2">
                     <?php
-                    echo $postid;
+
                     $username = getPostCreator($postid);
                     echo $username;
 
@@ -26,8 +26,7 @@ function show_post($postid) //Maximus
                 <i class="fa fa-star fa-2xl ml-2"></i>
                 <i class="fa fa-star fa-2xl"></i>
                 <i class="fa fa-star fa-2xl"></i>
-                <i class="fa fa-star fa-2xl"
-                   style="margin-bottom: 7%;"></i>
+                <i class="fa fa-star fa-2xl mb-xl-4"></i>
             </div>
 
             <br>
@@ -67,7 +66,11 @@ function show_post($postid) //Maximus
                             <i class="fa fa-star fa-2xl"></i>
                         <?php }
                     }
+
+                    if($show_RatingButtons){
+
                     ?>
+
                     <!-- daumen hoch /runter form Marius-->
                     <form action="like_post.php" method="post">
                         <input type="hidden" name="post_id" value="<?php echo $postid; ?>">
@@ -77,14 +80,16 @@ function show_post($postid) //Maximus
                         <button type="submit" name="like_type" value="dislike"><i class="fas fa-thumbs-down fa-2x"></i>
                         </button>
                     </form>
+                        <?php } ?>
                     <h5>Views: <?php $ID = 11;
                         if (is_null(get_views($ID))) echo 0; else echo get_views($ID); ?> </h5>
                 </div>
             </div>
         </div>
 
-
         <?php
+
+
     }
 }
 

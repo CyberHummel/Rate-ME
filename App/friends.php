@@ -84,6 +84,10 @@ $conn->close();
         .back-home-button a:hover {
             background-color: #0056b3;
         }
+
+        .icon:hover {
+            color: blueviolet;
+        }
     </style>
 </head>
 <body class="backround" style="height: 1000px;">
@@ -105,13 +109,13 @@ $conn->close();
          style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
         <!-- einbettung in a tag um es als link benutzen zu können-->
         <a href="home.php" style="text-decoration: none; color: black;">
-            <i class="fa-solid fa-share fa-2xl" style="vertical-align: bottom;"></i>
+            <i class="fa-solid fa-share fa-2xl icon" style="vertical-align: bottom;"></i>
         </a>
         <a href="add_post.php" style="text-decoration: none; color: black;">
-            <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
+            <i class="fa-solid fa-circle-plus fa-2xl icon" style="margin-right: 2%; vertical-align: bottom;"></i>
         </a>
         <a href="profile_page.php" style="text-decoration: none; color: black;">
-            <i class="fa-solid fa-bars fa-2xl" style="vertical-align: bottom;"></i>
+            <i class="fa-solid fa-bars fa-2xl icon" style="vertical-align: bottom;"></i>
         </a>
     </div>
 </div>
