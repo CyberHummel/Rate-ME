@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute
     if ($stmt->execute()) {
-        header("Location: /App/Frontend/index.php");
+        header("Location: index.php");
     } else {
         echo "Error registering user: " . $stmt->error;
     }

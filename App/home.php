@@ -29,7 +29,7 @@ if(!isset($_SESSION['user_username'])) {
         <div class="fixed-top container" style="background-color:rgb(255,255,255,0.9)">
             <h1 class="h1 text-center rate-me_headline">RateME</h1>
         </div>
-            <?php include "./Backend/get_post.php";
+            <?php include "get_post.php";
                 $user_name = $_SESSION["user_username"];
 
                $conn = connect_db();

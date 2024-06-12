@@ -2,8 +2,8 @@
 
 //~marius
 session_start();
-include_once '../Frontend/connect.php';
-include_once '../Frontend/get_post.php';
+include_once 'connect.php';
+include_once 'get_post.php';
 
 // Überprüfen, ob die Daten vom Formular gesendet wurden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->close();
 
         // Weiterleitung zur Startseite oder zur vorherigen Seite
-        header("Location: ../Frontend/home.php");
+        header("Location: home.php");
         exit;
     } else {
         // Fehlermeldung, wenn nicht alle erforderlichen Felder gesetzt sind
