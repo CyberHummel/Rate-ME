@@ -34,3 +34,65 @@ html{
 .icon:hover {
     color: blueviolet;
 }
+
+
+
+.login-btn{
+    color: white;
+    background: linear-gradient(261deg,darkviolet,#d61db3,#be8bb5);
+    background-size: 180% 180%;
+    animation: login-btn 24s ease infinite;
+}
+
+@keyframes login-btn {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-btn:hover{
+    background: linear-gradient(0deg, rgba(148, 0, 211, 0.34), rgba(214, 29, 179, 0.41), rgba(190, 139, 181, 0.66));
+    background-size: 180% 180%;
+    animation: login-btn 24s ease infinite;
+}
+
+.login-field{
+    background-color: rgba(214, 29, 179, 0.56);
+    color: white;
+    border: none;
+}
+
+.login-field:hover{
+    background: linear-gradient(0deg, rgba(148, 0, 211, 0.59),#d61db3,#be8bb5);
+    background-size: 180% 180%;
+    animation: login-btn 24s ease infinite;
+}
+
+.round {
+    border-radius:15px;
+}
+
+
+.gradient-background {
+    background: linear-gradient(268deg,darkviolet,#fc16d7,#ff07aa);
+    background-size: 180% 180%;
+    animation: gradient-animation 24s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
