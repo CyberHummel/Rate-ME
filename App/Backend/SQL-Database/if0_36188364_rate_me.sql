@@ -31,25 +31,28 @@ CREATE TABLE `post` (
   `post_date` date NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `post_ID` int(11) NOT NULL,
   `post_rating` int(120) NOT NULL,
-  `post_views` int(11) NOT NULL
+  `post_views` int(11) NOT NULL,
+  `post_likes` int(11) NOT NULL DEFAULT '0', -- Added post_likes column
+  `post_dislikes` int(11) NOT NULL DEFAULT '0', -- Added post_dislikes column
+  PRIMARY KEY (`post_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `post`
 --
 
-INSERT INTO `post` (`post_date`, `post_ID`, `post_rating`, `post_views`) VALUES
-('2024-06-11', 1, 100, 0),
-('2024-06-11', 2, 0, 0),
-('2024-06-11', 3, 0, 0),
-('2024-06-11', 4, 0, 0),
-('2024-06-11', 5, 0, 0),
-('2024-06-11', 6, 0, 0),
-('2024-06-11', 7, 0, 0),
-('2024-06-11', 8, 0, 0),
-('2024-06-11', 9, 0, 0),
-('2024-06-11', 10, 0, 0),
-('2024-06-12', 13, 0, 0);
+INSERT INTO `post` (`post_date`, `post_ID`, `post_rating`, `post_views`, `post_likes`, `post_dislikes`) VALUES
+('2024-06-11', 1, 100, 0, 0, 0),
+('2024-06-11', 2, 0, 0, 0, 0),
+('2024-06-11', 3, 0, 0, 0, 0),
+('2024-06-11', 4, 0, 0, 0, 0),
+('2024-06-11', 5, 0, 0, 0, 0),
+('2024-06-11', 6, 0, 0, 0, 0),
+('2024-06-11', 7, 0, 0, 0, 0),
+('2024-06-11', 8, 0, 0, 0, 0),
+('2024-06-11', 9, 0, 0, 0, 0),
+('2024-06-11', 10, 0, 0, 0, 0),
+('2024-06-12', 13, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -61,7 +64,8 @@ CREATE TABLE `post_content` (
   `post_content_ID` int(11) NOT NULL,
   `post_content_headline` varchar(20) NOT NULL,
   `post_content_description` text NOT NULL,
-  `post_content_image` blob NOT NULL
+  `post_content_image` blob NOT NULL,
+  PRIMARY KEY (`post_content_ID`) -- Added primary key here
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -89,7 +93,8 @@ INSERT INTO `post_content` (`post_content_ID`, `post_content_headline`, `post_co
 
 CREATE TABLE `post_ids` (
   `post_ID` int(11) NOT NULL,
-  `post_content_ID` int(11) NOT NULL
+  `post_content_ID` int(11) NOT NULL,
+  PRIMARY KEY (`post_ID`, `post_content_ID`) -- Added composite primary key here
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -123,7 +128,8 @@ CREATE TABLE `user` (
   `user_rating` int(120) NOT NULL,
   `user_password` varchar(20) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `user_join_date` date NOT NULL DEFAULT current_timestamp()
+  `user_join_date` date NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`user_id`) -- Added primary key here
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -146,7 +152,8 @@ INSERT INTO `user` (`user_pre_name`, `user_sur_name`, `user_username`, `user_ema
 
 CREATE TABLE `user_friend` (
   `user_1_ID` int(11) NOT NULL,
-  `user_2_ID` int(11) NOT NULL
+  `user_2_ID` int(11) NOT NULL,
+  PRIMARY KEY (`user_1_ID`, `user_2_ID`) -- Added composite primary key here
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -164,7 +171,9 @@ INSERT INTO `user_friend` (`user_1_ID`, `user_2_ID`) VALUES
 
 CREATE TABLE `user_posts` (
   `user_id` int(11) NOT NULL,
-  `post_ID` int(11) NOT NULL
+  `post_ID` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`, `post_ID`), -- Added composite primary key here
+  KEY `post_ID` (`post_ID`) -- Added key for post_ID here
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -183,46 +192,21 @@ INSERT INTO `user_posts` (`user_id`, `post_ID`) VALUES
 (7, 9),
 (7, 10);
 
---
--- Indizes der exportierten Tabellen
---
+-- --------------------------------------------------------
 
 --
--- Indizes für die Tabelle `post`
+-- Tabellenstruktur für Tabelle `post_likes`
 --
-ALTER TABLE `post`
-  ADD PRIMARY KEY (`post_ID`);
 
---
--- Indizes für die Tabelle `post_content`
---
-ALTER TABLE `post_content`
-  ADD PRIMARY KEY (`post_content_ID`);
-
---
--- Indizes für die Tabelle `post_ids`
---
-ALTER TABLE `post_ids`
-  ADD PRIMARY KEY (`post_ID`,`post_content_ID`);
-
---
--- Indizes für die Tabelle `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- Indizes für die Tabelle `user_friend`
---
-ALTER TABLE `user_friend`
-  ADD PRIMARY KEY (`user_1_ID`,`user_2_ID`);
-
---
--- Indizes für die Tabelle `user_posts`
---
-ALTER TABLE `user_posts`
-  ADD PRIMARY KEY (`user_id`,`post_ID`),
-  ADD KEY `post_ID` (`post_ID`);
+CREATE TABLE `post_likes` (
+  `like_id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_ID` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `like_type` varchar(10) NOT NULL,
+  PRIMARY KEY (`like_id`),
+  FOREIGN KEY (`post_ID`) REFERENCES `post`(`post_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- AUTO_INCREMENT für exportierte Tabellen
@@ -256,6 +240,7 @@ ALTER TABLE `user`
 ALTER TABLE `user_posts`
   ADD CONSTRAINT `user_posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `user_posts_ibfk_2` FOREIGN KEY (`post_ID`) REFERENCES `post` (`post_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
