@@ -166,7 +166,9 @@ INSERT INTO `user` (`user_pre_name`, `user_sur_name`, `user_username`, `user_ema
 ('Tom', 'Meier', 'tomHatEier', 'tom.meier@example.com', 30, 'password789', 5, '2024-06-11'),
 ('Lena', 'Müller', 'beiLenaMuellerts', 'lena.mueller@example.com', 30, 'passwordabc', 6, '2024-06-11'),
 ('David', 'Schulz', 'davidSchulzMachtSyncro', 'david.schulz@example.com', 15, 'passworddef', 7, '2024-06-11'),
-('Maximus', 'Nolte', '1', '1@1', 100, '1', 8, '2024-06-11');
+('Maximus', 'Nolte', '1', '1@1', 100, '1', 8, '2024-06-11'),
+('Marius','Flugel','Informatik15punkte','marius@test.de',100,'123',1,'2024-06-11');
+
 
 -- --------------------------------------------------------
 
