@@ -1,4 +1,5 @@
 <?php
+//~marius
 // Basic information
 $servername = "localhost";
 $username = "root";

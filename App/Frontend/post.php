@@ -1,6 +1,7 @@
 <?php
 include_once 'get_username.php';
-echo "User ID: " . $_SESSION['user_ID'];
+// echo "User ID: " . $_SESSION['user_ID'];
+
 
 // eroor finden yaaay
 ini_set('display_errors', 1);

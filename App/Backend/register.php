@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<!-- ~marius -->
 <html>
 <head>
     <title>Register</title>

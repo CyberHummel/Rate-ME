@@ -1,5 +1,14 @@
 <?php
 /*
+
+~marius
+aber kann ignoreirt werden
+
+
+
+
+
+
 include_once 'connect.php'; // Include the database connection file
 // variable deklarieren
 $user1_id; 
