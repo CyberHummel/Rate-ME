@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/c5f3357375.js" crossorigin="anonymous"></script>
 </head>
 <body class="gradient-background" style="height: 500px;">
-<div class="container rounded shadow mb-3 bg-light text" style="height: 100%; width: 50%;">
+<div class="container round shadow mb-3 bg-light text" style="height: 100%; width: 50%;">
     <h1 class="mt-3">Create new RateME Post</h1>
     <div class="container round shadow mb-4 bg-light">
         <form action="create_post.php" method="POST" enctype="multipart/form-data">

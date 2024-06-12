@@ -105,3 +105,9 @@ html{
     opacity: 0.0;
     background: repeating-linear-gradient( -45deg, #8f00ff, #8f00ff 20px, #e5e5f7 20px, #e5e5f7 100px );
 }
+
+button:hover{
+    background: linear-gradient(0deg, rgba(148, 0, 211, 0.25), rgba(214, 29, 179, 0.25), rgba(190, 139, 181, 0.31));
+    background-size: 180% 180%;
+    animation: login-btn 24s ease infinite;
+}

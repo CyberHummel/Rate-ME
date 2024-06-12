@@ -48,27 +48,27 @@
                 if ($rating >= 20) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
-                    <i class="fa fa-star fa-2xl"></i>
+                    <i class="fa fa-star fa-2xl"style="color: gray";></i>
                 <?php }
                 if ($rating >= 40) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
-                    <i class="fa fa-star fa-2xl"></i>
+                    <i class="fa fa-star fa-2xl"style="color: gray";></i>
                 <?php }
                 if ($rating >= 60) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
-                    <i class="fa fa-star fa-2xl"></i>
+                    <i class="fa fa-star fa-2xl"style="color: gray";></i>
                 <?php }
                 if ($rating >= 80) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
-                    <i class="fa fa-star fa-2xl"></i>
+                    <i class="fa fa-star fa-2xl"style="color: gray";></i>
                 <?php }
                 if ($rating >= 95) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
-                    <i class="fa fa-star fa-2xl"></i>
+                    <i class="fa fa-star fa-2xl"style="color: gray";></i>
                 <?php }
             }
         
@@ -108,6 +108,9 @@
             </a>
             <a href="home.php" style="text-decoration: none; color: black;">
                 <i class="fa-solid fa-share fa-2xl icon" style="vertical-align: bottom;"></i>
+            </a>
+            <a href="logout.php" style="text-decoration: none; color: black;">
+                <i class="fa-solid fa-sign-out fa-2xl icon" style="vertical-align: bottom;"></i>
             </a>
         </div>
 

@@ -44,27 +44,27 @@ function show_post($postid, $show_RatingButtons)
                     if ($userRating >= 20) { ?>
                         <i class="fa fa-star fa-2xl mb-4 mt-2 ml-2" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl"></i>
+                        <i class="fa fa-star fa-2xl mb-4 mt-2 ml-2" style="color: gray";></i>
                     <?php }
                     if ($userRating >= 40) { ?>
                         <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl"></i>
+                        <i class="fa fa-star fa-2xl" style="color: gray";></i>
                     <?php }
                     if ($userRating >= 60) { ?>
                         <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl"></i>
+                        <i class="fa fa-star fa-2xl" style="color: gray";></i>
                     <?php }
                     if ($userRating >= 80) { ?>
                         <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl"></i>
+                        <i class="fa fa-star fa-2xl" style="color: gray";></i>
                     <?php }
                     if ($userRating >= 95) { ?>
                         <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl"></i>
+                        <i class="fa fa-star fa-2xl" style="color: gray";></i>
                     <?php }
                 }
                 ?>
@@ -90,29 +90,29 @@ function show_post($postid, $show_RatingButtons)
                         echo 0.0;
                     } else {
                         if ($rating >= 20) { ?>
-                            <i class="fa fa-star fa-2xl ml-lg-3 mt-2" style="color: gold;"></i>
+                            <i class="fa fa-star fa-2xl ml-lg-3 mt-2 mb-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2"></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
                         <?php }
                         if ($rating >= 40) { ?>
                             <i class="fa fa-star fa-2xl mt-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2"></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
                         <?php }
                         if ($rating >= 60) { ?>
                             <i class="fa fa-star fa-2xl mt-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2"></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
                         <?php }
                         if ($rating >= 80) { ?>
                             <i class="fa fa-star fa-2xl mt-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2"></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
                         <?php }
                         if ($rating >= 95) { ?>
                             <i class="fa fa-star fa-2xl mt-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2"></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
                         <?php }
                     }
 
