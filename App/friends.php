@@ -57,7 +57,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Home!</title>
-    <link rel="stylesheet" href="home.css"> <!-- Styling -->
+    <link rel="stylesheet" href="Stylesheets/home.css"> <!-- Styling -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
           crossorigin="anonymous"> <!-- Bootstrap -->
     <script src="https://kit.fontawesome.com/c5f3357375.js" crossorigin="anonymous"></script>

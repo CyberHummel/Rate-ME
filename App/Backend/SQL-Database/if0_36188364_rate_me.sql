@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `post` (
-  `post_date` date NOT NULL DEFAULT current_timestamp(),
+  `post_date` date NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `post_ID` int(11) NOT NULL,
   `post_rating` int(120) NOT NULL,
   `post_views` int(11) NOT NULL

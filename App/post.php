@@ -11,9 +11,6 @@ function show_post($postid) //Maximus
 {
     if (isset($postid)) {
         ?>
-        <!DOCTYPE html>
-        <html lang="en">
-
         <div class="container rounded shadow mb-3 bg-light text">
             <h5><?php echo get_Headline($postid); ?></h5>
             <div class="rounded shadow mb-8">
@@ -70,7 +67,7 @@ function show_post($postid) //Maximus
                     }
                     ?>
                     <!-- daumen hoch /runter form Marius-->
-                    <form action="../Backend/like_post.php" method="post">
+                    <form action="Backend/like_post.php" method="post">
                         <input type="hidden" name="post_id" value="<?php echo $postid; ?>">
                         <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_ID']; ?>">
                         <button type="submit" name="like_type" value="like"><i class="fas fa-thumbs-up fa-2x"> </i>
@@ -82,7 +79,7 @@ function show_post($postid) //Maximus
                         if (is_null(get_views($ID))) echo 0; else echo get_views($ID); ?> </h5>
                 </div>
             </div>
-        </html>
+        </div>
 
 
         <?php

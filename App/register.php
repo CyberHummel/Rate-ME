@@ -4,8 +4,8 @@
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="../Frontend/design.css">
-    <link rel="stylesheet" type="text/css" href="../Frontend/home.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/design.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/home.css">
 </head>
 <body class="backround" style="height: 1000px;">
 
@@ -93,7 +93,7 @@ $conn->close();
         <input name="register" type="submit" value="Register"/>
     </form>
     <div class="button-container">
-        <a href="../Frontend/index.php" class="small-button">already part of this awesome community?</a>
+        <a href="index.php" class="small-button">already part of this awesome community?</a>
     </div>
 </div>
 
