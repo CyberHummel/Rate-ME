@@ -1,4 +1,4 @@
-<?php
+<?php //Maximus, überarbeitet von Marius, Maximus
 //post.php
 include_once 'get_username.php';
 include_once 'connect.php';
@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 function show_post($postid, $show_RatingButtons)
 {
     if (isset($postid)) {
-?>
+        ?>
         <div class="container rounded shadow mb-3 bg-light text">
             <h3><?php echo get_Headline($postid); ?></h3>
             <div class="rounded shadow mb-8">
@@ -24,8 +24,8 @@ function show_post($postid, $show_RatingButtons)
                     </h5>
 
                     <?php
-                    if(getUserImage(getPostCreator($postid)) !== null){//Maximus
-                        echo '<img src="data:image/jpeg;base64,'.base64_encode(getUserImage(getPostCreator($postid))).'" class="profile-pic ml-5 mt-2" style="width: 50px;"/ alt="No image found">';
+                    if (getUserImage(getPostCreator($postid)) !== null) {//Maximus
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode(getUserImage(getPostCreator($postid))) . '" class="profile-pic ml-5 mt-2" style="width: 50px;"/ alt="No image found">';
                     }
                     ?>
                 </div>
@@ -44,27 +44,27 @@ function show_post($postid, $show_RatingButtons)
                     if ($userRating >= 20) { ?>
                         <i class="fa fa-star fa-2xl mb-4 mt-2 ml-2" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl mb-4 mt-2 ml-2" style="color: gray";></i>
+                        <i class="fa fa-star fa-2xl mb-4 mt-2 ml-2" style="color: gray" ;></i>
                     <?php }
                     if ($userRating >= 40) { ?>
                         <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl" style="color: gray";></i>
+                        <i class="fa fa-star fa-2xl" style="color: gray" ;></i>
                     <?php }
                     if ($userRating >= 60) { ?>
                         <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl" style="color: gray";></i>
+                        <i class="fa fa-star fa-2xl" style="color: gray" ;></i>
                     <?php }
                     if ($userRating >= 80) { ?>
                         <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl" style="color: gray";></i>
+                        <i class="fa fa-star fa-2xl" style="color: gray" ;></i>
                     <?php }
                     if ($userRating >= 95) { ?>
                         <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                     <?php } else { ?>
-                        <i class="fa fa-star fa-2xl" style="color: gray";></i>
+                        <i class="fa fa-star fa-2xl" style="color: gray" ;></i>
                     <?php }
                 }
                 ?>
@@ -74,8 +74,8 @@ function show_post($postid, $show_RatingButtons)
             <div class="text-center round container shadow">
                 <br>
                 <?php
-                if(get_image($postid) !== null){//Maximus
-                    echo '<img src="data:image/jpeg;base64,'.base64_encode(get_image($postid)).'" style="width: 300px; "/ alt="No image found">';
+                if (get_image($postid) !== null) {//Maximus
+                    echo '<img src="data:image/jpeg;base64,' . base64_encode(get_image($postid)) . '" style="width: 300px; "/ alt="No image found">';
                 }
                 ?>
 
@@ -92,46 +92,48 @@ function show_post($postid, $show_RatingButtons)
                         if ($rating >= 20) { ?>
                             <i class="fa fa-star fa-2xl ml-lg-3 mt-2 mb-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray" ;></i>
                         <?php }
                         if ($rating >= 40) { ?>
                             <i class="fa fa-star fa-2xl mt-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray" ;></i>
                         <?php }
                         if ($rating >= 60) { ?>
                             <i class="fa fa-star fa-2xl mt-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray" ;></i>
                         <?php }
                         if ($rating >= 80) { ?>
                             <i class="fa fa-star fa-2xl mt-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray" ;></i>
                         <?php }
                         if ($rating >= 95) { ?>
                             <i class="fa fa-star fa-2xl mt-2" style="color: gold;"></i>
                         <?php } else { ?>
-                            <i class="fa fa-star fa-2xl mt-2" style="color: gray";></i>
+                            <i class="fa fa-star fa-2xl mt-2" style="color: gray" ;></i>
                         <?php }
                     }
 
                     if ($show_RatingButtons) {
-                    ?>
+                        ?>
 
                         <form action="like_post.php" method="post">
                             <input type="hidden" name="post_id" value="<?php echo $postid; ?>">
                             <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_ID']; ?>">
-                            <button type="submit" name="like_type" value="like" class="ml-xl-4 round mb-1" style="outline: none; border: none"><i class="fa fa-thumbs-up fa-2x " > </i>
+                            <button type="submit" name="like_type" value="like" class="ml-xl-4 round mb-1"
+                                    style="outline: none; border: none"><i class="fa fa-thumbs-up fa-2x "> </i>
                             </button>
-                            <button type="submit" name="like_type" value="dislike" style="border: none"><i class="fas fa-thumbs-down fa-2x"></i>
+                            <button type="submit" name="like_type" value="dislike" style="border: none"><i
+                                        class="fas fa-thumbs-down fa-2x"></i>
                             </button>
                         </form>
                     <?php } ?>
                     <h5 class="ml-xl-5">Views:
-                    <?php 
+                        <?php
                         increase_post_views($postid);
-                        
+
                         $sql = "SELECT post_views FROM `post` WHERE post_id = $postid";
                         $conn = connect_db();
                         $result = mysqli_query($conn, $sql);
@@ -142,13 +144,13 @@ function show_post($postid, $show_RatingButtons)
                             echo 0;
                         } else {
                             echo $post_views;
-                        } 
+                        }
                         ?>
-                            </h5>
+                    </h5>
                 </div>
             </div>
         </div>
-<?php
+        <?php
     }
 }
 

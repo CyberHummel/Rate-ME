@@ -1,8 +1,6 @@
 <?php
-
+//Grundstucktur Maximus, erweitert von Marius, Maximus
 include_once "connect.php";
-
-
 
 function increase_post_views($post_id)
 {
@@ -41,7 +39,7 @@ function get_post($post_id)
 
     if ($result && mysqli_num_rows($result) > 0) {
         $post = mysqli_fetch_assoc($result);
-        $views = $post['post_views'] ; // Erhöhe den views count um 1
+        $views = $post['post_views']; // Erhöhe den views count um 1
         $date = $post['post_date'];
         $rating = $post['post_rating'];
 
@@ -110,7 +108,8 @@ function get_Headline($post_id)//Aus Maximus´s Gehirn lädt die Headline eines 
     return get_post_content($post_id)[0];
 }
 
-function get_description($post_id){ //Aus Maximus´s sollte selbst erklärend sein
+function get_description($post_id)
+{ //Aus Maximus´s sollte selbst erklärend sein
     return get_post_content($post_id)[1];
 }
 

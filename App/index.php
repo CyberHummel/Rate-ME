@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="design.css">
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
-<body class=" gradient-background text-center " style="height: 100px">
+<body class=" gradient-background white-stripes text-center " style="height: 100px">
 <?php
 session_start();
 // generell blackbox autocomplete m schnerller zu schreiben ~ marius
@@ -25,7 +25,7 @@ function validateInput($input)
 }
 
 include "connect.php";
-$conn=connect_db();
+$conn = connect_db();
 
 // isset überprüft ob die methode tatsächlich exitiert bevor ich sie dann aufrufe
 if (isset($_SERVER['REQUEST_METHOD'])) {
@@ -86,7 +86,7 @@ $conn->close();
             <br>
             <div class="rounded shadow">
                 <label for="password">Password: </label>
-                <input id="password" name="password" required type="password" class="shadow round login-field" />
+                <input id="password" name="password" required type="password" class="shadow round login-field"/>
             </div>
 
         </div>
@@ -94,9 +94,9 @@ $conn->close();
             <input name="login" type="submit" value="Login" class="button rounded shadow mt-2 btn login-btn" style="border-width: 0; width: 100%;/>
         </div>
     </form>
-    <div class="button-container">
-        <a href="register.php" class="mb-lg-5 mt-2" style="color: #761dd6">Want to join Community?</a>
-    </div>
+    <div class=" button-container">
+            <a href="register.php" class="mb-lg-5 mt-2" style="color: #761dd6">Want to join Community?</a>
+        </div>
 
 
 </div>

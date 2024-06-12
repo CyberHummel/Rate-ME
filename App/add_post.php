@@ -22,15 +22,16 @@
             <input type="text" id="Healdline" name="Healdline" style="border-width: 0" class="shadow login-field round"><br><br>
 
             <label for="Description">Description:</label><br>
-            <textarea id="Description" name="Description" rows="4" cols="50" style="border-width: 0" class="shadow login-field round"></textarea><br><br>
+            <textarea id="Description" name="Description" rows="4" cols="50" style="border-width: 0"
+                      class="shadow login-field round"></textarea><br><br>
 
             <label for="image">Upload Image:</label><br>
-            <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow" accept="image/png, image/jpeg"><br><br>
+            <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow"
+                   accept="image/png, image/jpeg"><br><br>
 
             <input type="submit" value="Create Post" class="btn btn-dark mb-4">
         </form>
     </div>
-
 
 </div>
 
