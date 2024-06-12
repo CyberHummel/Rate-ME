@@ -3,6 +3,8 @@
     background: radial-gradient(circle, rgba(255, 182, 255, 1) 33%, rgba(255, 0, 109, 1) 100%);
     width: 100%;
     height: 100%;
+
+
 }
 
 .profile-pic {
@@ -83,6 +85,7 @@ html{
     background: linear-gradient(268deg,darkviolet,#fc16d7,#ff07aa);
     background-size: 180% 180%;
     animation: gradient-animation 6s ease infinite;
+
 }
 
 @keyframes gradient-animation {
@@ -95,4 +98,10 @@ html{
     100% {
         background-position: 0% 50%;
     }
+}
+
+.striped-background{
+    background-color: #e5e5f7;
+    opacity: 0.0;
+    background: repeating-linear-gradient( -45deg, #8f00ff, #8f00ff 20px, #e5e5f7 20px, #e5e5f7 100px );
 }

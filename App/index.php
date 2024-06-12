@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="design.css">
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
-<body class="gradient-background text-center" style="height: 100px">
+<body class=" gradient-background text-center " style="height: 100px">
 <?php
 session_start();
 // generell blackbox autocomplete m schnerller zu schreiben ~ marius
@@ -81,12 +81,12 @@ $conn->close();
         <div class="row rounded shadow">
             <div class="rounded">
                 <label for="username">Username:</label>
-                <input id="username" name="username" required type="text" class="shadow rounded login-field"/>
+                <input id="username" name="username" required type="text" class="shadow round login-field"/>
             </div>
             <br>
             <div class="rounded shadow">
                 <label for="password">Password: </label>
-                <input id="password" name="password" required type="password" class="shadow rounded login-field" />
+                <input id="password" name="password" required type="password" class="shadow round login-field" />
             </div>
 
         </div>
@@ -95,7 +95,7 @@ $conn->close();
         </div>
     </form>
     <div class="button-container">
-        <a href="register.php" class="mb-lg-5 mt-2">Want to join Community?</a>
+        <a href="register.php" class="mb-lg-5 mt-2" style="color: #761dd6">Want to join Community?</a>
     </div>
 
 
