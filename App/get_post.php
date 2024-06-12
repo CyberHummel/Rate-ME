@@ -1,7 +1,7 @@
 <?php
 include_once "connect.php";
 
-function get_post($post_id) //Aus Maximus´s und Marius´s Gehirn
+function get_post($post_id)
 {
     $conn = connect_db();
     $sql = "SELECT * FROM post WHERE post_id = ?";
@@ -12,7 +12,7 @@ function get_post($post_id) //Aus Maximus´s und Marius´s Gehirn
 
     if ($result && mysqli_num_rows($result) > 0) {
         $post = mysqli_fetch_assoc($result);
-        $views = $post['post_views'] + 1; // Inkrementiere den viewscount
+        $views = $post['post_views'] + 1; // Erhöhe den views count um 1
         $date = $post['post_date'];
         $rating = $post['post_rating'];
 
