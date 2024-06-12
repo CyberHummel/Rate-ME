@@ -12,6 +12,10 @@ Firefox user might encounter small issues loading due to Firefox complications w
 2. https://www.w3schools.com/
 3. https://www.blackbox.ai/ (vorallem die VScode extension)
 4. http://katzenpension.infinityfreeapp.com (Danke Timon für die Background CSS Idee)
+5. Gehirn von Maximus
+6. Denkvermögen von Marius
+7. Motivation von Tim XD
+8. Fachwissen von Josua XD
 
 ## What is it about?
 Rate-ME ist eine Full-Stack-Webanwendung, die es Benutzern ermöglicht, Beiträge zu veröffentlichen, zu liken und mit anderen zu interagieren. Deine Aktivität trägt zu einer persönlichen "Bewertung" bei, die deine soziale Beeinflussung vorhersagt.
