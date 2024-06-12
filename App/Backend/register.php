@@ -11,14 +11,7 @@
 
 <?php
 
-// Basic information
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "if0_36188364_rate_me";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+include "connect.php";
 
 // Check connection
 if ($conn->connect_error) {

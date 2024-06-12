@@ -24,18 +24,7 @@ function validateInput($input)
     return filter_var($input, FILTER_SANITIZE_STRING);
 }
 
-// Datenbankverbindungsdaten // gleiches wie bei register.php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "if0_36188364_rate_me";
-
-// Verbindung zur Datenbank herstellen
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Verbindung überprüfen
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "connect.php";
 
 // isset überprüft ob die methode tatsächlich exitiert bevor ich sie dann aufrufe
 if (isset($_SERVER['REQUEST_METHOD'])) {
