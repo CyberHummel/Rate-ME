@@ -12,6 +12,7 @@
 <?php
 
 include "connect.php";
+$conn=connect_db();
 
 // Check connection
 if ($conn->connect_error) {

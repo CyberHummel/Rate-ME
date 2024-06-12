@@ -25,6 +25,7 @@ function validateInput($input)
 }
 
 include "connect.php";
+$conn=connect_db();
 
 // isset überprüft ob die methode tatsächlich exitiert bevor ich sie dann aufrufe
 if (isset($_SERVER['REQUEST_METHOD'])) {
