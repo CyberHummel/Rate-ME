@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="design.css">
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
-<body class="backround">
+<body class="backround text-center" style="height: 100px">
 <?php
 session_start();
 // generell blackbox autocomplete m schnerller zu schreiben ~ marius
@@ -68,28 +68,38 @@ $conn->close();
 ?>
 
 <!-- headline banner -->
-<div class="fixed-top container rounded" style="background-color:rgba(255,255,255,0.9)">
-    <h1 class="h1 text-center rate-me_headline">RateME</h1>
-</div>
 
-<div id="central_panel" class="rounded container">
-    <div class="container text-left rounded">
-        <h1 style="margin-top: 25%">Sign in</h1>
+
+<div id="central_panel" class="rounded container align-self-center shadow">
+    <div class="container text-left rounded mt-xl-3">
+        <h1 class="rate-me_headline text-center" style="background-color: white">Rate ME</h1>
+        <h3 class="mt-xl-2" style="">Sign in</h3>
         <br>
     </div>
     <!-- Anmeldeformular -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="margin-left: 8%;">
-        <label for="username">Username:</label>
-        <input id="username" name="username" required type="text"/>
-        <br>
-        <label for="password">Password: </label>
-        <input id="password" name="password" required type="password"/>
+        <div class="row rounded shadow">
+            <div class="rounded shadow">
+                <label for="username">Username:</label>
+                <input id="username" name="username" required type="text" class="shadow rounded" style="border-width: 0; background-color: rgba(255,78,153,0.62)"/>
+            </div>
+            <br>
+            <div class="rounded shadow">
+                <label for="password">Password: </label>
+                <input id="password" name="password" required type="password" class="shadow rounded" style="border-width: 0; background-color: rgba(255,78,153,0.62)"/>
+            </div>
+
+        </div>
+
+        <input name="login" type="submit" value="Login" class="button rounded"
+               style="border-width: 0"     />
+
+
         <!-- wennn das hier gedrückt wird passiert nichts -->
-        <input name="login" type="submit" value="Login" class="button button-primary rounded"
-               style="margin-left: 15%; color: #007bff; border-width: 0; background-color: rgb(253,253,253)"/>
+
     </form>
     <div class="button-container">
-        <a href="../Backend/register.php" class="small-button">Want to join Community?</a>
+        <a href="register.php" class="mb-lg-5 mt-2">Want to join Community?</a>
     </div>
 
 

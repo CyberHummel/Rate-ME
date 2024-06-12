@@ -10,10 +10,8 @@
 }
 
 .rate-me_headline {
-    background: -webkit-linear-gradient(rgba(255, 182, 255, 1) 33%, rgba(255, 0, 109, 1));
     background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: rgba(255, 0, 109, 0.84);
 }
 
 .round {
