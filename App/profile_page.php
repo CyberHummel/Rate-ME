@@ -13,11 +13,11 @@
 <body class="backround" style="height: 1000px;">
 <div class="container rounded bg-light shadow mb-5 text" style="height: 100%; width: 50%;">
 
-    <div class="fixed-top container" style="background-color:rgb(255,255,255,0.9)">
+    <div class="container" style="background-color:rgb(255,255,255,0.9)">
         <h1 class="h1 text-center rate-me_headline">Welcome <?php session_start(); echo $_SESSION["user_username"]; ?></h1>
     </div>
 
-    <div class="container rounded shadow mb-3" style="margin-top: 15%">
+    <div class="container rounded shadow mb-3" ">
         <h2 class="h2 text-left">Your Rating:</h2>
         <!--TODO: Hier die Ratings ausgeben -->
         <?php
@@ -71,16 +71,16 @@
         <h2 class="h2 text-left">Your Posts:</h2>
         <div class="row">
             <div class="col">
-                <?php if(sizeof($postIDs) > 0){ show_post($postIDs[0]);} ?>
+                <?php if(sizeof($postIDs) > 0){ show_post($postIDs[0], false);} ?>
             </div>
             <div class="col">
-                <?php if(sizeof($postIDs) > 1){ show_post($postIDs[1]);} ?>
+                <?php if(sizeof($postIDs) > 1){ show_post($postIDs[1], false);} ?>
             </div>
             <div class="col">
-                <?php if(sizeof($postIDs) > 2){ show_post($postIDs[2]);} ?>
+                <?php if(sizeof($postIDs) > 2){ show_post($postIDs[2], false);} ?>
             </div>
             <div class="col">
-                <?php if(sizeof($postIDs) > 3){ show_post($postIDs[3]);} ?>
+                <?php if(sizeof($postIDs) > 3){ show_post($postIDs[3], false);} ?>
             </div>
         </div>
 
@@ -88,13 +88,13 @@
         <div id="bottom-bar" class="container rounded shadow mb-8 text-center fixed-bottom" style="height: 5%;background-color:rgb(255,182,255,1); width:40%;">
             <!-- einbettung in a tag um es als link benutzen zu können-->
             <a href="friends.php" style="text-decoration: none; color: black;">
-                <i class="fa-solid fa-user-group fa-2xl" style="margin-right: 1%; vertical-align: bottom;"></i>
+                <i class="fa-solid fa-user-group fa-2xl icon" style="margin-right: 1%; vertical-align: bottom;"></i>
             </a>
             <a href="add_post.php" style="text-decoration: none; color: black;">
-                <i class="fa-solid fa-circle-plus fa-2xl" style="margin-right: 2%; vertical-align: bottom;"></i>
+                <i class="fa-solid fa-circle-plus fa-2xl icon" style="margin-right: 2%; vertical-align: bottom;"></i>
             </a>
             <a href="home.php" style="text-decoration: none; color: black;">
-                <i class="fa-solid fa-share fa-2xl" style="vertical-align: bottom;"></i>
+                <i class="fa-solid fa-share fa-2xl icon" style="vertical-align: bottom;"></i>
             </a>
         </div>
 

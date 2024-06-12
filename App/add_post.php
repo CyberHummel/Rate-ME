@@ -15,7 +15,7 @@
 </head>
 <body class="backround" style="height: 500px;">
 <div class="container rounded shadow mb-3 bg-light text" style="height: 100%; width: 50%;">
-    <h1>Create new RateME Post</h1>
+    <h1 class="mt-3">Create new RateME Post</h1>
     <div class="container rounded shadow mb-4 bg-light">
         <form action="create_post.php" method="POST">
             <label for="Healdline">Headline:</label><br>
@@ -26,7 +26,6 @@
 
             <label for="image">Upload Image:</label><br>
             <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow"><br><br>
-
 
             <input type="submit" value="Create Post" class="btn btn-dark mb-4">
         </form>

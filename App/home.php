@@ -46,14 +46,14 @@ if(!isset($_SESSION['user_username'])) {
                 $postIDs = get_20_newest_posts();
                 ?>
                 <div class="container rounded" style="margin-top: 15%">
-                    <?php show_post($postIDs[0]); ?>
+                    <?php show_post($postIDs[0], true); ?>
                 </div>
                 <?php
 
                 for($i = 1; $i < sizeof($postIDs); $i++){
                     ?>
                     <div class="container">
-                        <?php show_post($postIDs[$i]); ?>
+                        <?php show_post($postIDs[$i], true); ?>
                     </div>
                     <?php
                 }
