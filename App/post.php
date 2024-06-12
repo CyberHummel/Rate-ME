@@ -119,9 +119,21 @@ function show_post($postid, $show_RatingButtons)
                             </button>
                         </form>
                     <?php } ?>
-                    <h5>Views: <?php $ID = $_SESSION['user_ID'];
-                                if (is_null(get_views($ID))) echo 0;
-                                else echo get_views($ID); ?> </h5>
+                    <h5>Views: 
+                    <?php 
+                        $sql = "SELECT post_views FROM `post` WHERE post_id = $postid";
+                        $conn = connect_db();
+                        $result = mysqli_query($conn, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        $post_views = $row['post_views'];
+
+                        if (is_null($post_views)) {
+                            echo 0;
+                        } else {
+                            echo $post_views;
+                        } 
+                        ?>
+                            </h5>
                 </div>
             </div>
         </div>
