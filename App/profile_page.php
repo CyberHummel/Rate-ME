@@ -36,29 +36,39 @@
         $rating = $row["user_rating"];
 
         ?>
-        <div class="row ml-2">
+        
         <?php
-
-        if (is_null($rating)){
-        echo 0.0;
-        }
-        else{
-        if($rating >= 20){ ?>
-        <i class="fa fa-star fa-2xl mt-2"></i>
-
-        <?php }
-                    if( $rating >= 40){ ?>
-        <i class="fa fa-star fa-2xl mt-2"></i>
-        <?php }
-        if ($rating >= 60){ ?>
-        <i class="fa fa-star fa-2xl mt-2"></i>
-        <?php }
-
-        if($rating >= 80){ ?>
-        <i class="fa fa-star fa-2xl mt-2"></i>
-        <?php }
-        }
-        ?>
+        if (isset($_POST[""])) {
+            if (is_null($userRating)) {
+                echo 0.0;
+            } else {
+                if ($userRating >= 20) { ?>
+                    <i class="fa fa-star fa-2xl" style="color: gold;"></i>
+                <?php } else { ?>
+                    <i class="fa fa-star fa-2xl"></i>
+                <?php }
+                if ($userRating >= 40) { ?>
+                    <i class="fa fa-star fa-2xl" style="color: gold;"></i>
+                <?php } else { ?>
+                    <i class="fa fa-star fa-2xl"></i>
+                <?php }
+                if ($userRating >= 60) { ?>
+                    <i class="fa fa-star fa-2xl" style="color: gold;"></i>
+                <?php } else { ?>
+                    <i class="fa fa-star fa-2xl"></i>
+                <?php }
+                if ($userRating >= 80) { ?>
+                    <i class="fa fa-star fa-2xl" style="color: gold;"></i>
+                <?php } else { ?>
+                    <i class="fa fa-star fa-2xl"></i>
+                <?php }
+                if ($userRating >= 95) { ?>
+                    <i class="fa fa-star fa-2xl" style="color: gold;"></i>
+                <?php } else { ?>
+                    <i class="fa fa-star fa-2xl"></i>
+                <?php }
+            }
+            ?>
         <h3> = <?php echo $rating; ?></h3>
         </div>
         <h2 class="h2 text-left">Your Friends:</h2>
