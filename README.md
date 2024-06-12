@@ -20,3 +20,4 @@ Rate-ME ist eine Full-Stack-Webanwendung, die es Benutzern ermöglicht, Beiträg
 ## How does Rate-Me work?
 Rate-ME ist eine socialmedia Platform, die sich vollends den Usern unterwirft. Hier zählt nur was andere von dir denken. Es wird keine Rücksicht auf einzelne genommen. Rate-ME funktioniert nach dem einfachen Prinzip des Sozialdarwinismus. Bist du beliebt ist deine Meinung was wehrt. Wenn du es nicht bist, well, then nobody cares about your opinion, and therefore we also don't care.
 
+lso hab dich nicht so, unf fang an zu raten!
