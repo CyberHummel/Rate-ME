@@ -17,7 +17,7 @@
 <div class="container rounded shadow mb-3 bg-light text" style="height: 100%; width: 50%;">
     <h1 class="mt-3">Create new RateME Post</h1>
     <div class="container rounded shadow mb-4 bg-light">
-        <form action="create_post.php" method="POST">
+        <form action="create_post.php" method="POST" enctype="multipart/form-data">
             <label for="Healdline">Headline:</label><br>
             <input type="text" id="Healdline" name="Healdline" style="border-width: 0" class="shadow login-field"><br><br>
 
@@ -25,7 +25,7 @@
             <textarea id="Description" name="Description" rows="4" cols="50" style="border-width: 0" class="shadow login-field"></textarea><br><br>
 
             <label for="image">Upload Image:</label><br>
-            <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow"><br><br>
+            <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow" accept="image/png, image/jpeg"><br><br>
 
             <input type="submit" value="Create Post" class="btn btn-dark mb-4">
         </form>

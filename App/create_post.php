@@ -5,6 +5,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     $headline = $_POST["Healdline"];
     $description = $_POST["Description"];
+    $image = $_FILES["image"];
+    $image_blob = addslashes(file_get_contents($image[tmp_name]));
 
     // TODO: Image Support
 
@@ -18,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $result = mysqli_query($conn, $sql);
 
-    $sql = "INSERT INTO post_content (post_content_headline, post_content_description) VALUES ('$headline', '$description')";
+    $sql = "INSERT INTO post_content (post_content_headline, post_content_description, post_content_image) VALUES ('$headline', '$description', '$image_blob')";
     $result = mysqli_query($conn, $sql);
 
     $sql = "SELECT post_ID FROM post ORDER BY post_ID DESC LIMIT 1";
