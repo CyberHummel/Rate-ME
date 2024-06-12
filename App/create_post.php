@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headline = $_POST["Healdline"];
     $description = $_POST["Description"];
     $image = $_FILES["image"];
-    $image_blob = addslashes(file_get_contents($image[tmp_name]));
+    $image_blob = addslashes(file_get_contents($image["tmp_name"]));
 
     // TODO: Image Support
 

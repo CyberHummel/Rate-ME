@@ -63,7 +63,12 @@ function show_post($postid, $show_RatingButtons)
             <br>
             <div class="text-center round container shadow">
                 <br>
-                <img src="https://picsum.photos/200" alt="">
+                <?php
+                if(get_image($postid) !== null){
+                    echo '<img src="data:image/jpeg;base64,'.base64_encode(get_image($postid)).'" style="width: 300px;"/ alt="No image found">';
+                }
+                ?>
+
                 <p style="text-align: left;" class="mt-2"><?php echo get_description($postid); ?></p>
                 <div class="text-left row mt-4">
                     <i class="fa fa-commenting-o fa-2xl ml-4"></i>
