@@ -119,7 +119,7 @@ function show_post($postid, $show_RatingButtons)
                             </button>
                         </form>
                     <?php } ?>
-                    <h5>Views: <?php $ID = 11;
+                    <h5>Views: <?php $ID = $_SESSION['user_ID'];
                                 if (is_null(get_views($ID))) echo 0;
                                 else echo get_views($ID); ?> </h5>
                 </div>
