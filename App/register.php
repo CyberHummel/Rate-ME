@@ -99,7 +99,7 @@ $conn->close();
         <label for="city">City and Postal Code:</label>
         <input id="city" name="city" type="text"/>
 
-        <label for="image">Upload Image:</label><br>
+        <label for="image">Upload Image:</label><br><!--Maximus-->
         <input type="file" id="image" name="image" class="btn btn-dark" style="border-width: 0" class="shadow" accept="image/png, image/jpeg" required><br><br>
         <input name="register" type="submit" value="Register"/>
     </form>

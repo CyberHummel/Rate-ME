@@ -85,7 +85,7 @@ function get_description($post_id){ //Aus Maximus´s sollte selbst erklärend se
     return get_post_content($post_id)[1];
 }
 
-function get_image($post_id) //Aus Maximus´s sollte selbst erklärend sein
+function get_image($post_id) //Aus Maximus´s Gehirn sollte selbst erklärend sein
 {
     return get_post_content($post_id)[2];
 }

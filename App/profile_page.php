@@ -16,7 +16,11 @@
     <div class="container" style="background-color:rgb(255,255,255,0.9)">
         <h1 class="h1 text-center rate-me_headline">Welcome <?php session_start(); echo $_SESSION["user_username"]; ?></h1>
     </div>
-
+    <?php
+    include_once "get_username.php";
+    if(getUserImage($_SESSION["user_username"])!== null){//Maximus
+    echo '<img src="data:image/jpeg;base64,'.base64_encode(getUserImage($_SESSION["user_username"])).'" class="profile-pic ml-2 mt-2" style="width: 200px;"/ alt="No image found">';
+    }?>
     <div class="container rounded shadow mb-3" ">
         <h2 class="h2 text-left">Your Rating:</h2>
         <!--TODO: Hier die Ratings ausgeben -->

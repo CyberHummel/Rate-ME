@@ -13,9 +13,8 @@ function show_post($postid, $show_RatingButtons)
         <div class="container rounded shadow mb-3 bg-light text">
             <h5><?php echo get_Headline($postid); ?></h5>
             <div class="rounded shadow mb-8">
-                <img src="https://picsum.photos/50" alt="" class="profile-pic ml-2 mt-2">
                 <?php
-                if(get_image($postid) !== null){//Maximus
+                if(getUserImage(getPostCreator($postid)) !== null){//Maximus
                     echo '<img src="data:image/jpeg;base64,'.base64_encode(getUserImage(getPostCreator($postid))).'" class="profile-pic ml-2 mt-2" style="width: 50px;"/ alt="No image found">';
                 }
                 ?>
