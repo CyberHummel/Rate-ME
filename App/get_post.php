@@ -1,5 +1,34 @@
 <?php
+
 include_once "connect.php";
+
+
+
+function increase_post_views($post_id)
+{
+    $conn = connect_db();
+    $sql_select = "SELECT post_views FROM post WHERE post_id = ?";
+    $stmt_select = mysqli_prepare($conn, $sql_select);
+    mysqli_stmt_bind_param($stmt_select, "i", $post_id);
+    mysqli_stmt_execute($stmt_select);
+    $result_select = mysqli_stmt_get_result($stmt_select);
+
+    if ($result_select && mysqli_num_rows($result_select) > 0) {
+        $post_views = mysqli_fetch_assoc($result_select)['post_views'];
+        $views = $post_views + 1; // Erhöhe den views count um 1
+
+        // Aktualisiere die Datenbank mit dem neuen views count
+        $sql_update = "UPDATE post SET post_views = ? WHERE post_id = ?";
+        $stmt_update = mysqli_prepare($conn, $sql_update);
+        mysqli_stmt_bind_param($stmt_update, "ii", $views, $post_id);
+        mysqli_stmt_execute($stmt_update);
+
+        return $views;
+    } else {
+        // Wenn kein Ergebnis gefunden wird, gib den aktuellen Wert zurück
+        return 0;
+    }
+}
 
 function get_post($post_id)
 {
@@ -12,7 +41,7 @@ function get_post($post_id)
 
     if ($result && mysqli_num_rows($result) > 0) {
         $post = mysqli_fetch_assoc($result);
-        $views = $post['post_views'] + 1; // Erhöhe den views count um 1
+        $views = $post['post_views'] ; // Erhöhe den views count um 1
         $date = $post['post_date'];
         $rating = $post['post_rating'];
 

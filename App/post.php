@@ -1,4 +1,5 @@
 <?php
+//post.php
 include_once 'get_username.php';
 include_once 'connect.php';
 
@@ -125,6 +126,8 @@ function show_post($postid, $show_RatingButtons)
                     <?php } ?>
                     <h5>Views: 
                     <?php 
+                        increase_post_views($postid);
+                        
                         $sql = "SELECT post_views FROM `post` WHERE post_id = $postid";
                         $conn = connect_db();
                         $result = mysqli_query($conn, $sql);
