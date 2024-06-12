@@ -38,36 +38,36 @@
         ?>
         
         <?php
-        if (isset($_POST[""])) {
-            if (is_null($userRating)) {
+            if (is_null($rating)) {
                 echo 0.0;
             } else {
-                if ($userRating >= 20) { ?>
+                if ($rating >= 20) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
                     <i class="fa fa-star fa-2xl"></i>
                 <?php }
-                if ($userRating >= 40) { ?>
+                if ($rating >= 40) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
                     <i class="fa fa-star fa-2xl"></i>
                 <?php }
-                if ($userRating >= 60) { ?>
+                if ($rating >= 60) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
                     <i class="fa fa-star fa-2xl"></i>
                 <?php }
-                if ($userRating >= 80) { ?>
+                if ($rating >= 80) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
                     <i class="fa fa-star fa-2xl"></i>
                 <?php }
-                if ($userRating >= 95) { ?>
+                if ($rating >= 95) { ?>
                     <i class="fa fa-star fa-2xl" style="color: gold;"></i>
                 <?php } else { ?>
                     <i class="fa fa-star fa-2xl"></i>
                 <?php }
             }
+        
             ?>
         <h3> = <?php echo $rating; ?></h3>
         </div>
@@ -112,4 +112,4 @@
 </div>
 
 </body>
-</html>
+</html> 
